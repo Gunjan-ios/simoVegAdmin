@@ -7,11 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		180574E225AAD8DC0063FCBE /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180574E125AAD8DC0063FCBE /* HomeViewController.swift */; };
+		180574E225AAD8DC0063FCBE /* UpdatePriceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180574E125AAD8DC0063FCBE /* UpdatePriceController.swift */; };
 		180574E425AAF8A00063FCBE /* PlaceOrderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180574E325AAF8A00063FCBE /* PlaceOrderTableViewCell.swift */; };
 		180574E625AB00840063FCBE /* OrderPlaceProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180574E525AB00840063FCBE /* OrderPlaceProduct.swift */; };
 		1854CB7825B4649A007A4AF9 /* ConfirmOrderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1854CB7725B4649A007A4AF9 /* ConfirmOrderTableViewCell.swift */; };
-		18944A7325A1EACA00739815 /* OrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18944A7225A1EACA00739815 /* OrderViewController.swift */; };
+		1863655B25BED29E001F47EB /* OrderTotalItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1863655A25BED29D001F47EB /* OrderTotalItemViewController.swift */; };
+		18944A7325A1EACA00739815 /* CustomerWiseOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18944A7225A1EACA00739815 /* CustomerWiseOrderViewController.swift */; };
 		18944A7625A1EF1000739815 /* OrderListOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18944A7425A1EF1000739815 /* OrderListOrder.swift */; };
 		18944A7725A1EF1000739815 /* OrderListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18944A7525A1EF1000739815 /* OrderListItem.swift */; };
 		18C4D03725A1C96C008AC632 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C4D03625A1C96C008AC632 /* User.swift */; };
@@ -89,7 +90,6 @@
 		18DF3D0D259B8D21007D216C /* ESTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DF3CFE259B8D21007D216C /* ESTabBar.swift */; };
 		18DF3D0E259B8D21007D216C /* ESTabBarItemContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DF3CFF259B8D21007D216C /* ESTabBarItemContainer.swift */; };
 		18E04A7925A35AD300ECCA67 /* OrderListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E04A7825A35AD300ECCA67 /* OrderListCell.swift */; };
-		18ED9B6225B3EDD100F4120C /* ConfirmOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18ED9B6125B3EDD100F4120C /* ConfirmOrderViewController.swift */; };
 		733948FD4BE66A56F32F9264 /* Pods_Simo_Vegetables.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F83821AB13B971A6902E102E /* Pods_Simo_Vegetables.framework */; };
 /* End PBXBuildFile section */
 
@@ -112,11 +112,12 @@
 
 /* Begin PBXFileReference section */
 		0EED80C11E74D981A57FBB41 /* Pods-Simo Vegetables.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Simo Vegetables.release.xcconfig"; path = "Target Support Files/Pods-Simo Vegetables/Pods-Simo Vegetables.release.xcconfig"; sourceTree = "<group>"; };
-		180574E125AAD8DC0063FCBE /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		180574E125AAD8DC0063FCBE /* UpdatePriceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatePriceController.swift; sourceTree = "<group>"; };
 		180574E325AAF8A00063FCBE /* PlaceOrderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceOrderTableViewCell.swift; sourceTree = "<group>"; };
 		180574E525AB00840063FCBE /* OrderPlaceProduct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderPlaceProduct.swift; sourceTree = "<group>"; };
 		1854CB7725B4649A007A4AF9 /* ConfirmOrderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmOrderTableViewCell.swift; sourceTree = "<group>"; };
-		18944A7225A1EACA00739815 /* OrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewController.swift; sourceTree = "<group>"; };
+		1863655A25BED29D001F47EB /* OrderTotalItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTotalItemViewController.swift; sourceTree = "<group>"; };
+		18944A7225A1EACA00739815 /* CustomerWiseOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerWiseOrderViewController.swift; sourceTree = "<group>"; };
 		18944A7425A1EF1000739815 /* OrderListOrder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderListOrder.swift; sourceTree = "<group>"; };
 		18944A7525A1EF1000739815 /* OrderListItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderListItem.swift; sourceTree = "<group>"; };
 		18C4D03625A1C96C008AC632 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -200,7 +201,6 @@
 		18DF3CFE259B8D21007D216C /* ESTabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ESTabBar.swift; sourceTree = "<group>"; };
 		18DF3CFF259B8D21007D216C /* ESTabBarItemContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ESTabBarItemContainer.swift; sourceTree = "<group>"; };
 		18E04A7825A35AD300ECCA67 /* OrderListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderListCell.swift; sourceTree = "<group>"; };
-		18ED9B6125B3EDD100F4120C /* ConfirmOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmOrderViewController.swift; sourceTree = "<group>"; };
 		DACF254863534ABA299CEF01 /* Pods-Simo Vegetables.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Simo Vegetables.debug.xcconfig"; path = "Target Support Files/Pods-Simo Vegetables/Pods-Simo Vegetables.debug.xcconfig"; sourceTree = "<group>"; };
 		F83821AB13B971A6902E102E /* Pods_Simo_Vegetables.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Simo_Vegetables.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -245,9 +245,9 @@
 		18C4D03825A1CAA2008AC632 /* TAB */ = {
 			isa = PBXGroup;
 			children = (
-				180574E125AAD8DC0063FCBE /* HomeViewController.swift */,
-				18ED9B6125B3EDD100F4120C /* ConfirmOrderViewController.swift */,
-				18944A7225A1EACA00739815 /* OrderViewController.swift */,
+				1863655A25BED29D001F47EB /* OrderTotalItemViewController.swift */,
+				18944A7225A1EACA00739815 /* CustomerWiseOrderViewController.swift */,
+				180574E125AAD8DC0063FCBE /* UpdatePriceController.swift */,
 				18C4D03925A1CAB6008AC632 /* MoreViewController.swift */,
 				18C4D03B25A1CD3A008AC632 /* EditProfileViewController.swift */,
 			);
@@ -752,13 +752,13 @@
 				18C4D03A25A1CAB6008AC632 /* MoreViewController.swift in Sources */,
 				18DF3CDC259B8D11007D216C /* ListButton.swift in Sources */,
 				18DF3CE9259B8D11007D216C /* Hud.swift in Sources */,
-				18ED9B6225B3EDD100F4120C /* ConfirmOrderViewController.swift in Sources */,
 				18DF3C95259B8CF9007D216C /* RoundedView.swift in Sources */,
 				18DF3C96259B8CF9007D216C /* UserData.swift in Sources */,
 				18DF3CE8259B8D11007D216C /* Reach.swift in Sources */,
 				18DF3CE7259B8D11007D216C /* CustomTextFieldForAttribute.swift in Sources */,
 				18C4D03C25A1CD3A008AC632 /* EditProfileViewController.swift in Sources */,
 				18DF3C92259B8CF9007D216C /* GeneralConstants.swift in Sources */,
+				1863655B25BED29E001F47EB /* OrderTotalItemViewController.swift in Sources */,
 				180574E425AAF8A00063FCBE /* PlaceOrderTableViewCell.swift in Sources */,
 				18DF3CD0259B8D11007D216C /* StretchableHeaderView.swift in Sources */,
 				18DF3CD8259B8D11007D216C /* MarginSelectView.swift in Sources */,
@@ -797,10 +797,10 @@
 				18DF3D08259B8D21007D216C /* ESTabBarItemMoreContentView.swift in Sources */,
 				18DF3CE4259B8D11007D216C /* CustomeAttacheFile.swift in Sources */,
 				18DF3CDF259B8D11007D216C /* DropDownPickerView.swift in Sources */,
-				180574E225AAD8DC0063FCBE /* HomeViewController.swift in Sources */,
+				180574E225AAD8DC0063FCBE /* UpdatePriceController.swift in Sources */,
 				180574E625AB00840063FCBE /* OrderPlaceProduct.swift in Sources */,
 				18DF3C93259B8CF9007D216C /* Enums.swift in Sources */,
-				18944A7325A1EACA00739815 /* OrderViewController.swift in Sources */,
+				18944A7325A1EACA00739815 /* CustomerWiseOrderViewController.swift in Sources */,
 				1854CB7825B4649A007A4AF9 /* ConfirmOrderTableViewCell.swift in Sources */,
 				18DF3C82259B8CF0007D216C /* ResetPasswordVC.swift in Sources */,
 				18DF3CD3259B8D11007D216C /* GenderView.swift in Sources */,
@@ -1002,7 +1002,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.Simo-Vegetables";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Simo-Vegetables.admin";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1021,7 +1021,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.Simo-Vegetables";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Simo-Vegetables.admin";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

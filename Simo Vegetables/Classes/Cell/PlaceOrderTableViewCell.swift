@@ -10,7 +10,7 @@ import UIKit
 
 class PlaceOrderTableViewCell: UITableViewCell ,UITextFieldDelegate{
 
-    var delegate : HomeViewController?
+    var delegate : UpdatePriceController?
 
     var btnqunty : UIButton = {
         let btn = UIButton(type: .custom)
@@ -42,7 +42,7 @@ class PlaceOrderTableViewCell: UITableViewCell ,UITextFieldDelegate{
         return label
     }()
 
-    var txtquanty :  OrderTextfiled = {
+    var txtbuyquanty :  OrderTextfiled = {
         let txt = OrderTextfiled()
         txt.keyboardType = .numberPad
         txt.textColor = .black
@@ -52,6 +52,14 @@ class PlaceOrderTableViewCell: UITableViewCell ,UITextFieldDelegate{
         return txt
     }()
 
+    var txtsellquanty :  OrderTextfiled = {
+        let txt = OrderTextfiled()
+        txt.keyboardType = .numberPad
+        txt.textColor = .black
+        //        txt.layer.borderWidth = 1
+        //        txt.layer.borderColor = UIColor.gray.cgColor
+        return txt
+    }()
     var lblunitNote: UILabel = {
         let label = UILabel()
         label.font = UIFont (name: APP_FONT_NAME, size: 12)
@@ -95,8 +103,8 @@ class PlaceOrderTableViewCell: UITableViewCell ,UITextFieldDelegate{
         yPosition +=  Int(lblFieldName.bounds.height)
 
 
-        self.txtquanty.frame = CGRect(x: xPosition, y:yPosition , width:  Int(frame.width)/2 - X_PADDING*2 , height: Order_CELL_LABEL_HEIGHT)
-        self.lblunitNote.frame =  CGRect (x: Int(frame.width)/2 + X_PADDING*2 , y: yPosition , width:  Int(frame.width)/2 -  X_PADDING*2  , height: Order_CELL_LABEL_HEIGHT)
+        self.txtbuyquanty.frame = CGRect(x: xPosition, y:yPosition , width:  Int(subView.frame.width)/2 - xPosition , height: Order_CELL_LABEL_HEIGHT)
+        self.txtsellquanty.frame =  CGRect (x:  SCREEN_WIDTH - Int(subView.frame.width)/2 - Y_PADDING , y: yPosition , width:  Int(subView.frame.width)/2 -  xPosition  , height: Order_CELL_LABEL_HEIGHT)
 
         self.lblSubFieldName.isHidden = true
 
@@ -106,7 +114,8 @@ class PlaceOrderTableViewCell: UITableViewCell ,UITextFieldDelegate{
         subView.addSubview(imgItem)
         subView.addSubview(btnqunty)
         subView.addSubview(lblFieldName)
-        subView.addSubview(txtquanty)
+        subView.addSubview(txtsellquanty)
+        subView.addSubview(txtbuyquanty)
         subView.addSubview(lblunitNote)
 
     }

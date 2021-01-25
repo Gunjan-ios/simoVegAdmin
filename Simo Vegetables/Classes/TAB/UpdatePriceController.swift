@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeViewController: ParentClass  ,UITableViewDelegate,UITableViewDataSource{
+class UpdatePriceController: ParentClass  ,UITableViewDelegate,UITableViewDataSource{
     
     fileprivate var headerview:UIView!
     fileprivate var yPosition: Int!
@@ -29,7 +29,6 @@ class HomeViewController: ParentClass  ,UITableViewDelegate,UITableViewDataSourc
     var tabHeight : Int = 0
     var bottmheightAdjust : Int = 0
 
-    var confirmOrder : ConfirmOrderViewController!
     var strOrder : String!
     var paramQuntity = NSMutableDictionary()
 
@@ -57,17 +56,24 @@ class HomeViewController: ParentClass  ,UITableViewDelegate,UITableViewDataSourc
         headerview.backgroundColor = colorPrimary
         self.view.addSubview(headerview)
 
-        let buttonTitle = CustomButton(frame: CGRect(x: 0 , y: 0, width: SCREEN_WIDTH , height: 24))
+        let buttonTitle = CustomButton(frame: CGRect(x: 0 , y: 0, width: SCREEN_WIDTH , height: NAV_HEADER_HEIGHT))
         buttonTitle.setTitle("Item Listing", for: .normal)
         buttonTitle.titleLabel?.font = UIFont(name:APP_FONT_NAME_BOLD, size: HEADER_FONT_SIZE)
         buttonTitle.contentHorizontalAlignment = .center
         headerview.addSubview(buttonTitle)
 
-        let buttonsubTitle = UIButton(frame: CGRect(x: 0 , y: 24, width: SCREEN_WIDTH , height: 17))
-        buttonsubTitle.setTitle("Set quantity & place order", for: .normal)
-        buttonsubTitle.titleLabel?.font = UIFont(name:APP_FONT_NAME_BOLD, size: SUB_HEADER_LABEL_FONT_SIZE)
-        buttonsubTitle.contentHorizontalAlignment = .center
-        headerview.addSubview(buttonsubTitle)
+//        let buttonsubTitle = UIButton(frame: CGRect(x: 0 , y: 24, width: SCREEN_WIDTH , height: 17))
+//        buttonsubTitle.setTitle("Set quantity & place order", for: .normal)
+//        buttonsubTitle.titleLabel?.font = UIFont(name:APP_FONT_NAME_BOLD, size: SUB_HEADER_LABEL_FONT_SIZE)
+//        buttonsubTitle.contentHorizontalAlignment = .center
+//        headerview.addSubview(buttonsubTitle)
+
+//        let buttonTitle = CustomButton(frame: CGRect(x: 0 , y: 0, width: SCREEN_WIDTH , height: NAV_HEADER_HEIGHT))
+//        buttonTitle.setTitle("Your Order", for: .normal)
+//        buttonTitle.titleLabel?.font = UIFont(name:APP_FONT_NAME_BOLD, size: HEADER_FONT_SIZE)
+//        buttonTitle.contentHorizontalAlignment = .center
+//        headerview.addSubview(buttonTitle)
+
 
         yPosition += Int(headerview.bounds.height) + Y_PADDING
 
@@ -88,7 +94,7 @@ class HomeViewController: ParentClass  ,UITableViewDelegate,UITableViewDataSourc
         self.view.addSubview(mainView)
 
         buttonPlaceOrder = CustomButton(frame: CGRect(x:  SCREEN_WIDTH - 160 , y: Int(mainView.bounds.height)  - bottmheightAdjust , width: 150 , height: 40))
-        buttonPlaceOrder.setTitle("Place Order", for: .normal)
+        buttonPlaceOrder.setTitle("Submit", for: .normal)
         buttonPlaceOrder.titleLabel?.font = UIFont(name:APP_FONT_NAME_BOLD, size: HEADER_FONT_SIZE)
         buttonPlaceOrder.addTarget(self, action: #selector(handelOrderPlace), for: .touchUpInside)
         buttonPlaceOrder.contentHorizontalAlignment = .center
@@ -136,7 +142,7 @@ class HomeViewController: ParentClass  ,UITableViewDelegate,UITableViewDataSourc
 
     func apiCallingFuncation( strDate : String){
 
-        WebServicesManager .productList(ordered_products: 0, search: "", onCompletion: { response in
+        WebServicesManager .productList(ordered_products: 1, search: "", onCompletion: { response in
 
             if response!["success"].intValue == 1 {
                 let res =  response!["products"].arrayValue
@@ -258,25 +264,31 @@ class HomeViewController: ParentClass  ,UITableViewDelegate,UITableViewDataSourc
             cell.backgroundColor = UIColor.clear
 //            cell.delegate = self
 
-            cell.txtquanty.delegate = self
-            cell.txtquanty.tag = indexPath.row
+            cell.txtbuyquanty.delegate = self
+            cell.txtbuyquanty.tag = indexPath.row
+
+            cell.txtsellquanty.delegate = self
+            cell.txtsellquanty.tag = indexPath.row
+
 //            cell.txtquanty.addTarget(self, action: #selector(textFieldDidEndEditing(textField:)), for: .valueChanged)
 
             let dic = orderDetails[indexPath.row]
             cell.lblFieldName.text = dic.productName
 //            cell.txtquanty.text = dic.salePrice
-            cell.txtquanty.placeholder = "Quantity (\(dic.unit ?? ""))"
-            cell.lblunitNote.text = dic.unitNote.htmlToString
+            cell.txtbuyquanty.placeholder = "Purchase Price"
+            cell.txtsellquanty.placeholder = "Selling Price"
+
+//            cell.lblunitNote.text = dic.unitNote.htmlToString
             cell.imgItem.sd_setImage(with: URL (string: dic.image!), placeholderImage: nil, options: .progressiveLoad)
 
-            if orderedData.count > 0{
-                for orderdic in orderedData{
-                    if orderdic.productId == dic.productId{
-                        cell.txtquanty.text = orderdic.quantity
-                        textFieldDidEndEditing(cell.txtquanty)
-                    }
-                }
-            }
+//            if orderedData.count > 0{
+//                for orderdic in orderedData{
+//                    if orderdic.productId == dic.productId{
+//                        cell.txtquanty.text = orderdic.quantity
+//                        textFieldDidEndEditing(cell.txtquanty)
+//                    }
+//                }
+//            }
             return cell
         }else{
             let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: ConfirmOrderTableViewCell.self)) as! ConfirmOrderTableViewCell
@@ -296,7 +308,7 @@ class HomeViewController: ParentClass  ,UITableViewDelegate,UITableViewDataSourc
 }
 
 
-extension HomeViewController : UITextFieldDelegate{
+extension UpdatePriceController : UITextFieldDelegate{
 
      func textFieldDidEndEditing(_ textField: UITextField) {
 

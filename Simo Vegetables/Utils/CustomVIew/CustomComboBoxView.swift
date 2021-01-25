@@ -14,7 +14,8 @@ class CustomComboBoxView: UIView, UIPickerViewDelegate, UIPickerViewDataSource, 
     private let pickerView = DropDownPickerView()
     var txtField:CustomTextFieldForAttribute!
     private var datePickerView:UIDatePicker? = nil
-    var delegateApp:OrderViewController?
+    var delegateApp:CustomerWiseOrderViewController?
+    var delegateOrder:OrderTotalItemViewController?
 
 
     let txtFieldHeight = 40
@@ -99,7 +100,9 @@ class CustomComboBoxView: UIView, UIPickerViewDelegate, UIPickerViewDataSource, 
         if let delegate = self.delegateApp {
             delegate.getSelectDate(date: self.txtField.text!)
          }
-
+        if let delegate = self.delegateOrder {
+            delegate.getSelectDate(date: self.txtField.text!)
+        }
     }
 
     //MARK:- Dropdown delegate

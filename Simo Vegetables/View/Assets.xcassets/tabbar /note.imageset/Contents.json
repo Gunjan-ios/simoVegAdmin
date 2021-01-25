@@ -1,12 +1,12 @@
 {
   "images" : [
     {
-      "filename" : "purchase-order.png",
+      "filename" : "note.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "purchase-order copy.png",
+      "filename" : "note copy.png",
       "idiom" : "universal",
       "scale" : "2x"
     },

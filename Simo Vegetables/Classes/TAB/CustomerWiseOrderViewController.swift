@@ -9,8 +9,7 @@
 import UIKit
 import LUExpandableTableView
 
-class OrderViewController: ParentClass {
-
+class CustomerWiseOrderViewController: ParentClass {
 
     fileprivate var headerview:UIView!
     fileprivate var yPosition: Int!
@@ -71,52 +70,6 @@ class OrderViewController: ParentClass {
 
         apiCallingFuncation(strDate: "")
 
-//        initscrollview()
-    }
-
-    func initscrollview(){
-
-        mainView = UIView (frame: CGRect (x: 0, y: yPosition, width: SCREEN_WIDTH, height: SCREEN_HEIGHT - yPosition))
-        mainView.backgroundColor = .white
-        self.view.addSubview(mainView)
-
-        var yInternalPosition = X_PADDING
-
-         orderName  = CustomLabel (frame: CGRect (x: 0, y: yInternalPosition, width: SCREEN_WIDTH , height: DYNAMIC_LABEL_HEIGHT))
-//        orderName.text = ""
-        orderName.font = UIFont (name: APP_FONT_NAME_BOLD, size: SUB_HEADER_LABEL_FONT_SIZE)
-        mainView.addSubview(orderName)
-
-        yInternalPosition += Int(orderName.bounds.height)
-
-         orderDate  = CustomLabel (frame: CGRect (x: 0, y: yInternalPosition, width: SCREEN_WIDTH , height: DYNAMIC_LABEL_HEIGHT))
-//        orderDate.text = "Order placed on "
-        mainView.addSubview(orderDate)
-
-        yInternalPosition += Int(orderDate.bounds.height)
-
-         orderAmount  = CustomLabel (frame: CGRect (x: 0, y: yInternalPosition, width: SCREEN_WIDTH/2 , height: DYNAMIC_LABEL_HEIGHT))
-//        orderAmount.text = "Total Amount : 0 RS"
-        orderAmount.font = UIFont (name: APP_FONT_NAME_BOLD, size: SUB_HEADER_LABEL_FONT_SIZE)
-        mainView.addSubview(orderAmount)
-
-        yInternalPosition += Int(orderAmount.bounds.height)
-
-        mainView.frame = CGRect (x: 0, y: yPosition, width: SCREEN_WIDTH, height: yInternalPosition)
-
-        yPosition += yInternalPosition
-
-    }
-
-    func setupDatewithAPI() {
-//        self.mainView.isHidden = false
-//        orderName.text = orderDetails.orderNumber
-//        orderDate.text = "Order placed on \(orderDetails.orderPlacedOn ?? "")"
-//        orderAmount.text = "Total Amount : \(orderDetails.orderAmount ?? "") RS"
-
-        
-
-
     }
 
     //––––––––––––––––––––––––––––––––––––––––
@@ -140,7 +93,6 @@ class OrderViewController: ParentClass {
                     self.tblList.reloadData()
                 }
             } else {
-
                 if self.tblList != nil{
                     self.tblList.isHidden = true
                     self.lblSubTitle.isHidden = false
@@ -178,7 +130,7 @@ class OrderViewController: ParentClass {
 
     }
 }
-extension OrderViewController: LUExpandableTableViewDataSource {
+extension CustomerWiseOrderViewController: LUExpandableTableViewDataSource {
     func numberOfSections(in expandableTableView: LUExpandableTableView) -> Int {
         return orderDetails.count
     }
@@ -210,7 +162,8 @@ extension OrderViewController: LUExpandableTableViewDataSource {
             return LUExpandableTableViewSectionHeader()
         }
 
-//        sectionHeader.orderName.text = "Section \(section)"
+        sectionHeader.name.text = "\(orderDetails[section].firstName ?? "")" + "\(orderDetails[section].lastName ?? "")"
+        sectionHeader.address.text = orderDetails[section].address
         sectionHeader.orderName.text = orderDetails[section].orderNumber
         sectionHeader.orderDate.text = "\(orderDetails[section].orderPlacedOn ?? "")"
         sectionHeader.ordertotal.text = "Total Amount : \(orderDetails[section].orderAmount ?? "")"
@@ -222,7 +175,7 @@ extension OrderViewController: LUExpandableTableViewDataSource {
 
 // MARK: - LUExpandableTableViewDelegate
 
-extension OrderViewController: LUExpandableTableViewDelegate {
+extension CustomerWiseOrderViewController: LUExpandableTableViewDelegate {
     func expandableTableView(_ expandableTableView: LUExpandableTableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         /// Returning `UITableViewAutomaticDimension` value on iOS 9 will cause reloading all cells due to an iOS 9 bug with automatic dimensions
         return 90.0
@@ -230,7 +183,7 @@ extension OrderViewController: LUExpandableTableViewDelegate {
 
     func expandableTableView(_ expandableTableView: LUExpandableTableView, heightForHeaderInSection section: Int) -> CGFloat {
         /// Returning `UITableViewAutomaticDimension` value on iOS 9 will cause reloading all cells due to an iOS 9 bug with automatic dimensions
-        return 65
+        return 117.0
     }
 
     // MARK: - Optional

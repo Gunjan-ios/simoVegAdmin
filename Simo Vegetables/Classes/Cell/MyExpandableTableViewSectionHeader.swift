@@ -12,6 +12,8 @@ import LUExpandableTableView
 final class MyExpandableTableViewSectionHeader: LUExpandableTableViewSectionHeader {
     // MARK: - Properties
     
+    @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var address: UILabel!
 
     @IBOutlet weak var orderName: UILabel!
     @IBOutlet weak var orderDate: UILabel!

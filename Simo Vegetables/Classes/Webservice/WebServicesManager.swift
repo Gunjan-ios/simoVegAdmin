@@ -12,9 +12,13 @@ import SwiftyJSON
 
 let apiId = "YzMxYjMyMzY0Y2UxOWNhOGZjZDE1MGE0MTdlY2NlNTg="
 let BASE_URL = "https://digitalfriend.co.in/simo_vegetables/api/services/"
+let BASE_Admin_URL = "https://digitalfriend.co.in/simo_vegetables/api/"
+
 let ItunesUrl = "https://apps.apple.com/us/app/connflix/id1546423387"
 
+//let SIGNIN_URL = "admin/login"
 let SIGNIN_URL = "user/signin"
+
 let SIGNUP_URL = "user/signup"
 let PROFILEUPDATE_URL = "user/update_profile"
 let RESENDOTP_URL = "user/resend_otp"

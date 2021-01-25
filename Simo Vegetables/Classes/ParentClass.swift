@@ -74,14 +74,17 @@ class ParentClass: UIViewController{
     
     func customBouncesStyle() -> UIViewController {
         tab = ESTabBarController()
-        let v1 = HomeViewController()
-        let v2 = OrderViewController()
-        let v3 = MoreViewController()
+        let v1 = OrderTotalItemViewController()
+        let v2 = CustomerWiseOrderViewController()
+        let v3 = UpdatePriceController()
+        let v4 = MoreViewController()
         tab.tabBar.barTintColor = UIColor .init(white: 0.9, alpha: 1)
-        v1.tabBarItem = ESTabBarItem.init(ExampleBouncesContentView(), title: "Home", image: UIImage(named: "home"), selectedImage: UIImage(named: "home_1"))
-        v2.tabBarItem = ESTabBarItem.init(ExampleBouncesContentView(), title: "Order", image: UIImage(named: "purchase-order"), selectedImage: UIImage(named: "purchase-order"))
-        v3.tabBarItem = ESTabBarItem.init(ExampleBouncesContentView(), title: "More", image: UIImage(named: "tabSetting"), selectedImage: UIImage(named: "tabSetting_1"))
-        tab.viewControllers = [v1, v2, v3 ]
+        v1.tabBarItem = ESTabBarItem.init(ExampleBouncesContentView(), title: "Order total items", image: UIImage(named: "purchase-order"), selectedImage: UIImage(named: "purchase-order"))
+        v2.tabBarItem = ESTabBarItem.init(ExampleBouncesContentView(), title: "Customerwise Order", image: UIImage(named: "customer"), selectedImage: UIImage(named: "customer"))
+        v3.tabBarItem = ESTabBarItem.init(ExampleBouncesContentView(), title: "Update Price", image: UIImage(named: "note"), selectedImage: UIImage(named: "note"))
+        v4.tabBarItem = ESTabBarItem.init(ExampleBouncesContentView(), title: "More", image: UIImage(named: "tabSetting"), selectedImage: UIImage(named: "tabSetting_1"))
+
+        tab.viewControllers = [v1, v2, v3,v4]
 
         tab.title = ""
         tab.tabBar.backgroundColor = .white
