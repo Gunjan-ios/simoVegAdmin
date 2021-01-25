@@ -1,0 +1,26 @@
+source 'https://github.com/CocoaPods/Specs.git'
+
+platform :ios, '11.0'
+use_frameworks!
+
+target 'Simo Vegetables' do
+ 	
+  pod 'SDWebImage'
+  pod 'LIHAlert'
+  pod 'TextFieldEffects'
+  pod 'IQKeyboardManagerSwift' 
+  pod 'Alamofire', '~> 4.7'
+  pod 'SwiftyJSON'
+  pod 'JQProgressHUD'
+  pod 'DLRadioButton', '~> 1.4'
+  pod 'JAPinView', :git=> 'https://github.com/JayachandraA/JAPinView.git'
+  pod 'PickerView'
+  pod 'CountryPickerView'
+  pod 'JNKeychain'
+  pod 'MaterialComponents/TextControls+OutlinedTextFields'
+  pod 'OTPFieldView'
+  pod 'IPImage'
+  pod 'LUExpandableTableView'
+
+  end
+
