@@ -12,6 +12,7 @@
 		180574E625AB00840063FCBE /* OrderPlaceProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180574E525AB00840063FCBE /* OrderPlaceProduct.swift */; };
 		1854CB7825B4649A007A4AF9 /* ConfirmOrderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1854CB7725B4649A007A4AF9 /* ConfirmOrderTableViewCell.swift */; };
 		1863655B25BED29E001F47EB /* OrderTotalItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1863655A25BED29D001F47EB /* OrderTotalItemViewController.swift */; };
+		1866B09325C05E600065399F /* PrivacyPolicyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1866B09225C05E5F0065399F /* PrivacyPolicyViewController.swift */; };
 		18944A7325A1EACA00739815 /* CustomerWiseOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18944A7225A1EACA00739815 /* CustomerWiseOrderViewController.swift */; };
 		18944A7625A1EF1000739815 /* OrderListOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18944A7425A1EF1000739815 /* OrderListOrder.swift */; };
 		18944A7725A1EF1000739815 /* OrderListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18944A7525A1EF1000739815 /* OrderListItem.swift */; };
@@ -117,6 +118,7 @@
 		180574E525AB00840063FCBE /* OrderPlaceProduct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderPlaceProduct.swift; sourceTree = "<group>"; };
 		1854CB7725B4649A007A4AF9 /* ConfirmOrderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmOrderTableViewCell.swift; sourceTree = "<group>"; };
 		1863655A25BED29D001F47EB /* OrderTotalItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTotalItemViewController.swift; sourceTree = "<group>"; };
+		1866B09225C05E5F0065399F /* PrivacyPolicyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyViewController.swift; sourceTree = "<group>"; };
 		18944A7225A1EACA00739815 /* CustomerWiseOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerWiseOrderViewController.swift; sourceTree = "<group>"; };
 		18944A7425A1EF1000739815 /* OrderListOrder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderListOrder.swift; sourceTree = "<group>"; };
 		18944A7525A1EF1000739815 /* OrderListItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderListItem.swift; sourceTree = "<group>"; };
@@ -125,7 +127,7 @@
 		18C4D03B25A1CD3A008AC632 /* EditProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		18D3E09E25BD3EF7009382BC /* MyExpandableTableViewSectionHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyExpandableTableViewSectionHeader.swift; sourceTree = "<group>"; };
 		18D3E0A125BD3FAD009382BC /* MyExpandableTableViewSectionHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyExpandableTableViewSectionHeader.xib; sourceTree = "<group>"; };
-		18DF3C3C259B8B00007D216C /* Simo Vegetables.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Simo Vegetables.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		18DF3C3C259B8B00007D216C /* Simo Veg Admin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Simo Veg Admin.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		18DF3C43259B8B00007D216C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		18DF3C46259B8B00007D216C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		18DF3C48259B8B04007D216C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -250,6 +252,7 @@
 				180574E125AAD8DC0063FCBE /* UpdatePriceController.swift */,
 				18C4D03925A1CAB6008AC632 /* MoreViewController.swift */,
 				18C4D03B25A1CD3A008AC632 /* EditProfileViewController.swift */,
+				1866B09225C05E5F0065399F /* PrivacyPolicyViewController.swift */,
 			);
 			path = TAB;
 			sourceTree = "<group>";
@@ -269,7 +272,7 @@
 		18DF3C3D259B8B00007D216C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				18DF3C3C259B8B00007D216C /* Simo Vegetables.app */,
+				18DF3C3C259B8B00007D216C /* Simo Veg Admin.app */,
 				18DF3C52259B8B05007D216C /* Simo VegetablesTests.xctest */,
 				18DF3C5D259B8B05007D216C /* Simo VegetablesUITests.xctest */,
 			);
@@ -580,7 +583,7 @@
 			);
 			name = "Simo Vegetables";
 			productName = "Simo Vegetables";
-			productReference = 18DF3C3C259B8B00007D216C /* Simo Vegetables.app */;
+			productReference = 18DF3C3C259B8B00007D216C /* Simo Veg Admin.app */;
 			productType = "com.apple.product-type.application";
 		};
 		18DF3C51259B8B05007D216C /* Simo VegetablesTests */ = {
@@ -813,6 +816,7 @@
 				18DF3CE6259B8D11007D216C /* CustomLabel.swift in Sources */,
 				18DF3CD2259B8D11007D216C /* SegmentedControl.swift in Sources */,
 				18DF3C94259B8CF9007D216C /* UIView_Borders.swift in Sources */,
+				1866B09325C05E600065399F /* PrivacyPolicyViewController.swift in Sources */,
 				18DF3CD7259B8D11007D216C /* CustomInputFieldView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1003,7 +1007,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Simo-Vegetables.admin";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Simo Veg Admin";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1022,7 +1026,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Simo-Vegetables.admin";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Simo Veg Admin";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

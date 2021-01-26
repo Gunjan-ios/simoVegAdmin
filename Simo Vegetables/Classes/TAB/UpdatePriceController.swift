@@ -19,7 +19,7 @@ class UpdatePriceController: ParentClass  ,UITableViewDelegate,UITableViewDataSo
     fileprivate var buttonPlaceOrder: CustomButton!
 
     fileprivate var tblList: UITableView!
-    fileprivate var tblconfirmOrderList: UITableView!
+//    fileprivate var tblconfirmOrderList: UITableView!
 
     var orderDetails : [OrderPlaceProduct]! = [OrderPlaceProduct]()
     var placeorderDetails : [OrderPlaceProduct]! = [OrderPlaceProduct]()
@@ -32,7 +32,7 @@ class UpdatePriceController: ParentClass  ,UITableViewDelegate,UITableViewDataSo
     var strOrder : String!
     var paramQuntity = NSMutableDictionary()
 
-    var mainConfimVIew : UIView!
+//    var mainConfimVIew : UIView!
     fileprivate var buttonsubmitOrder: CustomButton!
     fileprivate var buttonEditOrder: CustomButton!
 
@@ -57,23 +57,10 @@ class UpdatePriceController: ParentClass  ,UITableViewDelegate,UITableViewDataSo
         self.view.addSubview(headerview)
 
         let buttonTitle = CustomButton(frame: CGRect(x: 0 , y: 0, width: SCREEN_WIDTH , height: NAV_HEADER_HEIGHT))
-        buttonTitle.setTitle("Item Listing", for: .normal)
+        buttonTitle.setTitle("Update daily price of items", for: .normal)
         buttonTitle.titleLabel?.font = UIFont(name:APP_FONT_NAME_BOLD, size: HEADER_FONT_SIZE)
         buttonTitle.contentHorizontalAlignment = .center
         headerview.addSubview(buttonTitle)
-
-//        let buttonsubTitle = UIButton(frame: CGRect(x: 0 , y: 24, width: SCREEN_WIDTH , height: 17))
-//        buttonsubTitle.setTitle("Set quantity & place order", for: .normal)
-//        buttonsubTitle.titleLabel?.font = UIFont(name:APP_FONT_NAME_BOLD, size: SUB_HEADER_LABEL_FONT_SIZE)
-//        buttonsubTitle.contentHorizontalAlignment = .center
-//        headerview.addSubview(buttonsubTitle)
-
-//        let buttonTitle = CustomButton(frame: CGRect(x: 0 , y: 0, width: SCREEN_WIDTH , height: NAV_HEADER_HEIGHT))
-//        buttonTitle.setTitle("Your Order", for: .normal)
-//        buttonTitle.titleLabel?.font = UIFont(name:APP_FONT_NAME_BOLD, size: HEADER_FONT_SIZE)
-//        buttonTitle.contentHorizontalAlignment = .center
-//        headerview.addSubview(buttonTitle)
-
 
         yPosition += Int(headerview.bounds.height) + Y_PADDING
 
@@ -83,53 +70,38 @@ class UpdatePriceController: ParentClass  ,UITableViewDelegate,UITableViewDataSo
             bottmheightAdjust = 50
         }
 
-        mainConfimVIew = UIView (frame: CGRect(x: 0, y: yPosition, width: SCREEN_WIDTH, height: SCREEN_HEIGHT - yPosition - tabHeight  - ParentClass.sharedInstance.iPhone_X_Bottom_Padding))
-        //        mainConfimVIew.frame = self.view.frame
-        mainConfimVIew.backgroundColor = .white
-        self.view.addSubview(mainConfimVIew)
-        mainConfimVIew.isHidden = true
+//        mainConfimVIew = UIView (frame: CGRect(x: 0, y: yPosition, width: SCREEN_WIDTH, height: SCREEN_HEIGHT - yPosition - tabHeight  - ParentClass.sharedInstance.iPhone_X_Bottom_Padding))
+//        //        mainConfimVIew.frame = self.view.frame
+//        mainConfimVIew.backgroundColor = .white
+//        self.view.addSubview(mainConfimVIew)
+//        mainConfimVIew.isHidden = true
 
-        mainView = UIView (frame: CGRect(x: 0, y: yPosition, width: SCREEN_WIDTH, height: SCREEN_HEIGHT - yPosition - tabHeight - ParentClass.sharedInstance.iPhone_X_Bottom_Padding))
-        mainView.backgroundColor = .white
-        self.view.addSubview(mainView)
+//        mainView = UIView (frame: CGRect(x: 0, y: yPosition, width: SCREEN_WIDTH, height: SCREEN_HEIGHT - yPosition - tabHeight - ParentClass.sharedInstance.iPhone_X_Bottom_Padding))
+//        mainView.backgroundColor = .white
+//        self.view.addSubview(mainView)
 
-        buttonPlaceOrder = CustomButton(frame: CGRect(x:  SCREEN_WIDTH - 160 , y: Int(mainView.bounds.height)  - bottmheightAdjust , width: 150 , height: 40))
+        buttonPlaceOrder = CustomButton(frame: CGRect(x:  SCREEN_WIDTH - 160 , y: SCREEN_HEIGHT  - bottmheightAdjust - tabHeight , width: 150 , height: 40))
         buttonPlaceOrder.setTitle("Submit", for: .normal)
         buttonPlaceOrder.titleLabel?.font = UIFont(name:APP_FONT_NAME_BOLD, size: HEADER_FONT_SIZE)
         buttonPlaceOrder.addTarget(self, action: #selector(handelOrderPlace), for: .touchUpInside)
         buttonPlaceOrder.contentHorizontalAlignment = .center
-        mainView.addSubview(buttonPlaceOrder)
-
-        buttonEditOrder = CustomButton(frame: CGRect(x:  Y_PADDING , y:  Int(mainConfimVIew.bounds.height) - bottmheightAdjust , width: SCREEN_WIDTH/2 - X_PADDING , height: 40))
-        buttonEditOrder.setTitle("Edit Order", for: .normal)
-        buttonEditOrder.titleLabel?.font = UIFont(name:APP_FONT_NAME_BOLD, size: HEADER_FONT_SIZE)
-        buttonEditOrder.addTarget(self, action: #selector(onBackPressed), for: .touchUpInside)
-        buttonEditOrder.contentHorizontalAlignment = .center
-        mainConfimVIew.addSubview(buttonEditOrder)
-
-        buttonsubmitOrder = CustomButton(frame: CGRect(x: SCREEN_WIDTH/2  + Y_PADDING, y: Int(mainConfimVIew.bounds.height)  - bottmheightAdjust , width: SCREEN_WIDTH/2  - X_PADDING , height: 40))
-        buttonsubmitOrder.setTitle("Confirm & Submit", for: .normal)
-        buttonsubmitOrder.titleLabel?.font = UIFont(name:APP_FONT_NAME_BOLD, size: HEADER_FONT_SIZE)
-        buttonsubmitOrder.addTarget(self, action: #selector(placeOrderApiCallingFuncation), for: .touchUpInside)
-        buttonsubmitOrder.contentHorizontalAlignment = .center
-        mainConfimVIew.addSubview(buttonsubmitOrder)
-
+        self.view.addSubview(buttonPlaceOrder)
 
     }
     @objc func onBackPressed(){
-        mainConfimVIew.isHidden = true
-        mainView.isHidden = false
+//        mainConfimVIew.isHidden = true
+//        mainView.isHidden = false
     }
     @objc func handelOrderPlace(){
 
         if placeorderDetails.count > 0{
-            self.mainConfimVIew.isHidden = false
-            self.mainView.isHidden = true
-            if self.tblconfirmOrderList != nil{
-                self.tblconfirmOrderList.reloadData()
-            }else{
-                self.initConfirmOrderTableview()
-            }
+//            self.mainConfimVIew.isHidden = false
+//            self.mainView.isHidden = true
+//            if self.tblconfirmOrderList != nil{
+//                self.tblconfirmOrderList.reloadData()
+//            }else{
+//                self.initConfirmOrderTableview()
+//            }
         }else{
             self.showAlert(message: "Please make order First.", type: AlertType.error, navBar: false)
 
@@ -158,13 +130,14 @@ class UpdatePriceController: ParentClass  ,UITableViewDelegate,UITableViewDataSo
                     dateFormatter.dateFormat = "dd-MM-yyyy"
                     self.getOrderApiCallingFuncation(strDate: dateFormatter.string(from: Date()))
                 }
-                self.mainView.isHidden = false
+                self.buttonPlaceOrder.isHidden = false
+//                self.mainView.isHidden = false
             } else {
                 if self.tblList != nil{
                     self.tblList.isHidden = true
-                }else{
-                    self.lblSubTitle.isHidden = false
                 }
+                self.lblSubTitle.isHidden = false
+                self.buttonPlaceOrder.isHidden = true
 //                self.showAlert(message: response!["message"].stringValue, type: AlertType.error, navBar: false)
             }
         },onError:{ error in
@@ -179,9 +152,9 @@ class UpdatePriceController: ParentClass  ,UITableViewDelegate,UITableViewDataSo
         WebServicesManager .orderPlaceList(ordered_products: strOrder, user_id: ConnflixUtilities.shared.UserID!, order_id: "", onCompletion: { response in
             if response!["success"].intValue == 1 {
                 self.showAlert(message: response!["message"].stringValue, type: AlertType.error, navBar: false)
-                self.mainConfimVIew.isHidden = true
-                self.mainView.isHidden = false
-                ParentClass.sharedInstance.tab.selectedIndex = 1
+//                self.mainConfimVIew.isHidden = true
+//                self.mainView.isHidden = false
+//                ParentClass.sharedInstance.tab.selectedIndex = 1
             }
         },onError:{ error in
             if error != nil {
@@ -230,23 +203,23 @@ class UpdatePriceController: ParentClass  ,UITableViewDelegate,UITableViewDataSo
         self.tblList.endEditing(true)
     }
 
-    func initConfirmOrderTableview()  {
-        // layer list
-        self.tblconfirmOrderList = UITableView (frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: Int(mainView.bounds.height) - bottmheightAdjust - 10), style: .plain)
-        self.tblconfirmOrderList.delegate = self
-        self.tblconfirmOrderList.dataSource = self
-        self.tblconfirmOrderList.tag = 7777
-        self.tblconfirmOrderList.register(ConfirmOrderTableViewCell.self, forCellReuseIdentifier: "ConfirmOrderTableViewCell")
-        self.tblconfirmOrderList.separatorStyle = .singleLine
-        self.tblconfirmOrderList.separatorInset = UIEdgeInsets (top: 0, left: 0, bottom: 0, right: 0)
-        self.tblconfirmOrderList.showsVerticalScrollIndicator = false
-        self.tblconfirmOrderList.backgroundColor = .white
-        self.tblconfirmOrderList.estimatedRowHeight = UITableView.automaticDimension
-        self.tblconfirmOrderList.rowHeight = CONFIRM_CELL_HEIGHT
-        mainConfimVIew.addSubview(self.tblconfirmOrderList)
-        self.tblconfirmOrderList.tableFooterView = UIView()
-
-    }
+//    func initConfirmOrderTableview()  {
+//        // layer list
+//        self.tblconfirmOrderList = UITableView (frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: Int(mainView.bounds.height) - bottmheightAdjust - 10), style: .plain)
+//        self.tblconfirmOrderList.delegate = self
+//        self.tblconfirmOrderList.dataSource = self
+//        self.tblconfirmOrderList.tag = 7777
+//        self.tblconfirmOrderList.register(ConfirmOrderTableViewCell.self, forCellReuseIdentifier: "ConfirmOrderTableViewCell")
+//        self.tblconfirmOrderList.separatorStyle = .singleLine
+//        self.tblconfirmOrderList.separatorInset = UIEdgeInsets (top: 0, left: 0, bottom: 0, right: 0)
+//        self.tblconfirmOrderList.showsVerticalScrollIndicator = false
+//        self.tblconfirmOrderList.backgroundColor = .white
+//        self.tblconfirmOrderList.estimatedRowHeight = UITableView.automaticDimension
+//        self.tblconfirmOrderList.rowHeight = CONFIRM_CELL_HEIGHT
+//        mainConfimVIew.addSubview(self.tblconfirmOrderList)
+//        self.tblconfirmOrderList.tableFooterView = UIView()
+//
+//    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if tableView == tblList{
             return orderDetails.count

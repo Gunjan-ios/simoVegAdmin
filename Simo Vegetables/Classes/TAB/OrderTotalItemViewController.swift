@@ -29,6 +29,8 @@ class OrderTotalItemViewController:  ParentClass  ,UITableViewDelegate,UITableVi
         self.view.backgroundColor = .white
         loadHeaderView()
         print(ParentClass.sharedInstance.tab.selectedIndex)
+
+        
         // Do any additional setup after loading the view.
     }
     
@@ -41,7 +43,7 @@ class OrderTotalItemViewController:  ParentClass  ,UITableViewDelegate,UITableVi
         self.view.addSubview(headerview)
 
         let buttonTitle = CustomButton(frame: CGRect(x: 0 , y: 0, width: SCREEN_WIDTH , height: NAV_HEADER_HEIGHT))
-        buttonTitle.setTitle("Your Order", for: .normal)
+        buttonTitle.setTitle("Order total Items", for: .normal)
         buttonTitle.titleLabel?.font = UIFont(name:APP_FONT_NAME_BOLD, size: HEADER_FONT_SIZE)
         buttonTitle.contentHorizontalAlignment = .center
         headerview.addSubview(buttonTitle)
@@ -54,13 +56,13 @@ class OrderTotalItemViewController:  ParentClass  ,UITableViewDelegate,UITableVi
 
         buttonDate = CustomComboBoxView(frame: CGRect (x: SCREEN_WIDTH - 140, y: yPosition, width: 130, height: NAV_HEADER_HEIGHT))
         buttonDate.delegateOrder = self
-        buttonDate.initDesign(pName:"", pTag: 1, pOptions: [], pPlaceHolder: "Select Date")
+        buttonDate.initDesign(pName:Date.yesterday.convertToDateString, pTag: 1, pOptions: [], pPlaceHolder: "Select Date")
         buttonDate.setDatePicker()
         self.view.addSubview(buttonDate)
 
         yPosition += Int(buttonDate.bounds.height)
 
-        apiCallingFuncation(strDate: "")
+        apiCallingFuncation(strDate: Date.yesterday.convertToDateString)
 
         //        initscrollview()
     }
@@ -128,8 +130,8 @@ class OrderTotalItemViewController:  ParentClass  ,UITableViewDelegate,UITableVi
             } else {
                 if self.tblconfirmOrderList != nil{
                     self.tblconfirmOrderList.isHidden = true
-                    self.lblSubTitle.isHidden = false
                 }
+                self.lblSubTitle.isHidden = false
                 //                self.showAlert(message: response!["message"].stringValue, type: AlertType.error, navBar: false)
             }
         },onError:{ error in

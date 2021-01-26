@@ -214,12 +214,19 @@ extension Date {
     
     var  formatter: DateFormatter { return DateFormatter() }
     
-    var convertToString: String {
+    var convertToTimeString: String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "HH:mm:ss"
         let str = dateFormatter.string(from: self)
         return str
     }
+    var convertToDateString: String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = DATE_FORMAT
+        let str = dateFormatter.string(from: self)
+        return str
+    }
+
 }
 
 

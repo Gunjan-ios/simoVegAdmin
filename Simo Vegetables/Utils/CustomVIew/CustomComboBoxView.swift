@@ -44,6 +44,7 @@ class CustomComboBoxView: UIView, UIPickerViewDelegate, UIPickerViewDataSource, 
         self.txtField = CustomTextFieldForAttribute(frame: CGRect(x: 0, y: 0, width: Int(frame.size.width), height: txtFieldHeight))
         self.txtField.delegate = self as UITextFieldDelegate
         self.txtField.tag = pTag
+        self.txtField.text = pName
         self.txtField.returnKeyType = .done
         self.txtField.placeholder = pPlaceHolder
         self.txtField.attributedPlaceholder = NSAttributedString(string: pPlaceHolder,

@@ -162,13 +162,11 @@ class MoreViewController: ParentClass,UITextFieldDelegate {
         })
     }
    @objc func onBtnPressed(sender:UIButton){
-    
-    if sender.tag == 1 {
-//        subscription = SubscriptionViewController()
-//        self.navigationController?.pushViewController(subscription!, animated: true)
-    }else if sender.tag == 2 {
-//        myWallet = DeleteViewController()
-//        self.navigationController?.pushViewController(myWallet!, animated: true)
+
+    if sender.tag == 1 || sender.tag == 2{
+        let privacy = PrivacyPolicyViewController()
+        privacy.tag = sender.tag
+        self.navigationController?.pushViewController(privacy, animated: true)
     }else{
         OnlogoutPressed()
     }

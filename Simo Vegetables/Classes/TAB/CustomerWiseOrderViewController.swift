@@ -48,7 +48,7 @@ class CustomerWiseOrderViewController: ParentClass {
         self.view.addSubview(headerview)
 
         let buttonTitle = CustomButton(frame: CGRect(x: 0 , y: 0, width: SCREEN_WIDTH , height: NAV_HEADER_HEIGHT))
-        buttonTitle.setTitle("Your Order", for: .normal)
+        buttonTitle.setTitle("Customer wise order", for: .normal)
         buttonTitle.titleLabel?.font = UIFont(name:APP_FONT_NAME_BOLD, size: HEADER_FONT_SIZE)
         buttonTitle.contentHorizontalAlignment = .center
         headerview.addSubview(buttonTitle)
@@ -62,13 +62,13 @@ class CustomerWiseOrderViewController: ParentClass {
 
         buttonDate = CustomComboBoxView(frame: CGRect (x: SCREEN_WIDTH - 140, y: yPosition, width: 130, height: NAV_HEADER_HEIGHT))
         buttonDate.delegateApp = self
-        buttonDate.initDesign(pName:"", pTag: 1, pOptions: [], pPlaceHolder: "Select Date")
+        buttonDate.initDesign(pName:Date.yesterday.convertToDateString, pTag: 1, pOptions: [], pPlaceHolder: "Select Date")
         buttonDate.setDatePicker()
         self.view.addSubview(buttonDate)
 
         yPosition += Int(buttonDate.bounds.height)
 
-        apiCallingFuncation(strDate: "")
+        apiCallingFuncation(strDate: Date.yesterday.convertToDateString)
 
     }
 
@@ -95,10 +95,9 @@ class CustomerWiseOrderViewController: ParentClass {
             } else {
                 if self.tblList != nil{
                     self.tblList.isHidden = true
-                    self.lblSubTitle.isHidden = false
-                }else{
-                    self.lblSubTitle.isHidden = true
                 }
+                self.lblSubTitle.isHidden = false
+
                 self.showAlert(message: response!["message"].stringValue, type: AlertType.error, navBar: false)
             }
         },onError:{ error in
