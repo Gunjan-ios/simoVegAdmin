@@ -84,7 +84,7 @@ class LoginVC: ParentClass ,UITextFieldDelegate,CountryPickerViewDelegate, Count
     func apiCallingFuncation(){
         
         
-        WebServicesManager .loginWS(mobile: txt_User.text!.trim(), password: txt_Password.text!.trim(), onCompletion: { response in
+        WebServicesManager .loginWS(mobile: txt_User.text!.trim(), password: txt_Password.text!.trim(),view:self.view, onCompletion: { response in
             
             if response!["success"].intValue == 1 {
                 

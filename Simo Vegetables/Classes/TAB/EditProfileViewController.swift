@@ -177,7 +177,7 @@ class EditProfileViewController: ParentClass,UIImagePickerControllerDelegate,UIN
 
         print(param)
         
-     WebServicesManager.profileUpdateWS(formData:param , onCompletion: { response in
+        WebServicesManager.profileUpdateWS(formData:param, view: self.view , onCompletion: { response in
             
             if response!["success"].intValue == 1 {
                 
@@ -198,7 +198,7 @@ class EditProfileViewController: ParentClass,UIImagePickerControllerDelegate,UIN
     }
     func apiCallingFuncationProfile(){
 
-        WebServicesManager.profileWS(user_id: ConnflixUtilities.shared.UserID!, onCompletion: { response in
+        WebServicesManager.profileWS(user_id: ConnflixUtilities.shared.UserID!, view: self.view, onCompletion: { response in
 
             if response!["success"].intValue == 1 {
                 self.userDic  = User.init(fromJson: response!["user"])

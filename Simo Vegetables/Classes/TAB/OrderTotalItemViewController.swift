@@ -62,9 +62,11 @@ class OrderTotalItemViewController:  ParentClass  ,UITableViewDelegate,UITableVi
 
         yPosition += Int(buttonDate.bounds.height)
 
-        apiCallingFuncation(strDate: Date.yesterday.convertToDateString)
 
         //        initscrollview()
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        apiCallingFuncation(strDate: Date.yesterday.convertToDateString)
     }
     func getSelectDate(date : String){
         apiCallingFuncation(strDate: date)
@@ -97,7 +99,6 @@ class OrderTotalItemViewController:  ParentClass  ,UITableViewDelegate,UITableVi
             cell.selectionStyle = .none
             cell.backgroundColor = UIColor.clear
 
-
             let dic = placeorderDetails[indexPath.row]
             cell.btnqunty.setTitle("Qty : \(dic.totalOrderedQuantity ?? "0")", for: .normal)
             cell.lblFieldName.text = dic.productName
@@ -113,7 +114,7 @@ class OrderTotalItemViewController:  ParentClass  ,UITableViewDelegate,UITableVi
 
     func apiCallingFuncation( strDate : String){
 
-        WebServicesManager .productList(ordered_products: 1, search: "", onCompletion: { response in
+        WebServicesManager .productList(ordered_products: 1, search: "", view: self.view, onCompletion: { response in
 
             if response!["success"].intValue == 1 {
                 let res =  response!["products"].arrayValue

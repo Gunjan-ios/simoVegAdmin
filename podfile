@@ -21,6 +21,6 @@ target 'Simo Vegetables' do
   pod 'OTPFieldView'
   pod 'IPImage'
   pod 'LUExpandableTableView'
-
+  pod 'iProgressHUD'
   end
 

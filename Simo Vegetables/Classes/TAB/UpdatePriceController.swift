@@ -92,16 +92,20 @@ class UpdatePriceController: ParentClass  ,UITableViewDelegate,UITableViewDataSo
 //        mainConfimVIew.isHidden = true
 //        mainView.isHidden = false
     }
+    func getTableData(){
+        for i in 0..<tblList.numberOfRows(inSection: 0) { //tbl--> your table name
+            let dic = orderDetails[i]
+            let cell = tblList.cellForRow(at: IndexPath(row: i, section: 0)) as! PlaceOrderTableViewCell
+            let set = "\(cell.txtbuyquanty.text ?? "")|\(cell.txtsellquanty.text ?? "")"
+            paramQuntity.setValue(set, forKey: dic.productId)
+        }
+        strOrder = Utils.stringFromJson(obj: paramQuntity as! [String : Any])
+         print(strOrder as String)
+    }
     @objc func handelOrderPlace(){
-
-        if placeorderDetails.count > 0{
-//            self.mainConfimVIew.isHidden = false
-//            self.mainView.isHidden = true
-//            if self.tblconfirmOrderList != nil{
-//                self.tblconfirmOrderList.reloadData()
-//            }else{
-//                self.initConfirmOrderTableview()
-//            }
+        getTableData()
+        if paramQuntity.count > 0{
+            placeOrderApiCallingFuncation()
         }else{
             self.showAlert(message: "Please make order First.", type: AlertType.error, navBar: false)
 
@@ -114,7 +118,7 @@ class UpdatePriceController: ParentClass  ,UITableViewDelegate,UITableViewDataSo
 
     func apiCallingFuncation( strDate : String){
 
-        WebServicesManager .productList(ordered_products: 1, search: "", onCompletion: { response in
+        WebServicesManager .productList(ordered_products: 1, search: "", view: self.view, onCompletion: { response in
 
             if response!["success"].intValue == 1 {
                 let res =  response!["products"].arrayValue
@@ -126,9 +130,9 @@ class UpdatePriceController: ParentClass  ,UITableViewDelegate,UITableViewDataSo
                     self.tblList.reloadData()
                 }else{
                     self.initTableview()
-                    let dateFormatter = DateFormatter()
-                    dateFormatter.dateFormat = "dd-MM-yyyy"
-                    self.getOrderApiCallingFuncation(strDate: dateFormatter.string(from: Date()))
+//                    let dateFormatter = DateFormatter()
+//                    dateFormatter.dateFormat = "dd-MM-yyyy"
+//                    self.getOrderApiCallingFuncation(strDate: dateFormatter.string(from: Date()))
                 }
                 self.buttonPlaceOrder.isHidden = false
 //                self.mainView.isHidden = false
@@ -149,12 +153,9 @@ class UpdatePriceController: ParentClass  ,UITableViewDelegate,UITableViewDataSo
 
     @objc func placeOrderApiCallingFuncation(){
 
-        WebServicesManager .orderPlaceList(ordered_products: strOrder, user_id: ConnflixUtilities.shared.UserID!, order_id: "", onCompletion: { response in
+        WebServicesManager .updatePrice(ordered_products: strOrder, view: self.view, onCompletion: { response in
             if response!["success"].intValue == 1 {
                 self.showAlert(message: response!["message"].stringValue, type: AlertType.error, navBar: false)
-//                self.mainConfimVIew.isHidden = true
-//                self.mainView.isHidden = false
-//                ParentClass.sharedInstance.tab.selectedIndex = 1
             }
         },onError:{ error in
             if error != nil {
@@ -165,7 +166,7 @@ class UpdatePriceController: ParentClass  ,UITableViewDelegate,UITableViewDataSo
 
     func getOrderApiCallingFuncation( strDate : String){
 
-        WebServicesManager .orderList(user_id: ConnflixUtilities.shared.UserID!, order_date: strDate, onCompletion: { response in
+        WebServicesManager .orderList(user_id: ConnflixUtilities.shared.UserID!, order_date: strDate, view: self.view, onCompletion: { response in
             if response!["success"].intValue == 1 {
 
                 let orderList  = response!["orders"][0]["items"].arrayValue
@@ -187,7 +188,7 @@ class UpdatePriceController: ParentClass  ,UITableViewDelegate,UITableViewDataSo
 //    Int((self.tabBarController?.tabBar.frame.height)!)
     func initTableview()  {
         // layer list
-        self.tblList = UITableView (frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: Int(mainView.bounds.height) - bottmheightAdjust - 10), style: .plain)
+        self.tblList = UITableView (frame: CGRect(x: 0, y: yPosition, width: SCREEN_WIDTH, height: SCREEN_HEIGHT - yPosition - tabHeight  - ParentClass.sharedInstance.iPhone_X_Bottom_Padding - bottmheightAdjust ), style: .plain)
         self.tblList.delegate = self
         self.tblList.dataSource = self
         self.tblList.tag = 8888
@@ -198,7 +199,7 @@ class UpdatePriceController: ParentClass  ,UITableViewDelegate,UITableViewDataSo
         self.tblList.backgroundColor = .white
         self.tblList.estimatedRowHeight = UITableView.automaticDimension
         self.tblList.rowHeight = TABLEVIEW_CELL_HEIGHT
-        mainView.addSubview(self.tblList)
+        self.view.addSubview(self.tblList)
         self.tblList.tableFooterView = UIView()
         self.tblList.endEditing(true)
     }
@@ -251,6 +252,9 @@ class UpdatePriceController: ParentClass  ,UITableViewDelegate,UITableViewDataSo
             cell.txtbuyquanty.placeholder = "Purchase Price"
             cell.txtsellquanty.placeholder = "Selling Price"
 
+            cell.txtbuyquanty.text = dic.purchasePrice
+            cell.txtsellquanty.text = dic.salePrice
+
 //            cell.lblunitNote.text = dic.unitNote.htmlToString
             cell.imgItem.sd_setImage(with: URL (string: dic.image!), placeholderImage: nil, options: .progressiveLoad)
 
@@ -285,20 +289,20 @@ extension UpdatePriceController : UITextFieldDelegate{
 
      func textFieldDidEndEditing(_ textField: UITextField) {
 
-        let keyExiest = paramQuntity[textField.tag] != nil
-        let dic = orderDetails[textField.tag]
-
-        if !textField.text!.isEmpty{
-            if keyExiest{
-                paramQuntity[textField.tag] = textField.text
-            }else{
-                dic.myOrder = textField.text
-                placeorderDetails.append(dic)
-                paramQuntity.setValue(textField.text!, forKey: dic.productId)
-            }
-            strOrder = Utils.stringFromJson(obj: paramQuntity as! [String : Any])
-            print(strOrder as Any)
-        }
+//        let keyExiest = paramQuntity[textField.tag] != nil
+//        let dic = orderDetails[textField.tag]
+//
+//        if !textField.text!.isEmpty{
+//            if keyExiest{
+//                paramQuntity[textField.tag] = textField.text
+//            }else{
+//                dic.myOrder = textField.text
+//                placeorderDetails.append(dic)
+//                paramQuntity.setValue(textField.text!, forKey: dic.productId)
+//            }
+//            strOrder = Utils.stringFromJson(obj: paramQuntity as! [String : Any])
+//            print(strOrder as Any)
+//        }
     }
 
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {

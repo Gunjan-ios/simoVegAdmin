@@ -59,7 +59,7 @@ class ResetPasswordVC: ParentClass,UITextFieldDelegate {
     
     func apiCallingFuncation(){
         
-        WebServicesManager.RESET_PASSWORD_WS(mobile: ConnflixUtilities.shared.mobile!, password: txt_password.text!.trim() ,onCompletion: { response in
+        WebServicesManager.RESET_PASSWORD_WS(mobile: ConnflixUtilities.shared.mobile!, password: txt_password.text!.trim() , view: self.view, onCompletion: { response in
             if response!["success"].intValue == 1 {
 
             if self.fromWhere == "reset"{

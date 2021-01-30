@@ -68,17 +68,18 @@ class CustomerWiseOrderViewController: ParentClass {
 
         yPosition += Int(buttonDate.bounds.height)
 
-        apiCallingFuncation(strDate: Date.yesterday.convertToDateString)
 
     }
-
+    override func viewWillAppear(_ animated: Bool) {
+        apiCallingFuncation(strDate: Date.yesterday.convertToDateString)
+    }
     //––––––––––––––––––––––––––––––––––––––––
     //MARK: - API Function
     //––––––––––––––––––––––––––––––––––––––––
 
     func apiCallingFuncation( strDate : String){
 
-        WebServicesManager .orderList(user_id: ConnflixUtilities.shared.UserID!, order_date: strDate, onCompletion: { response in
+        WebServicesManager .orderList(user_id: ConnflixUtilities.shared.UserID!, order_date: strDate, view: self.view, onCompletion: { response in
             if response!["success"].intValue == 1 {
                 let res =  response!["orders"].arrayValue
                 self.orderDetails.removeAll()

@@ -77,7 +77,7 @@ class PrivacyPolicyViewController: ParentClass {
 
     func apiCallingFuncation(){
         
-        WebServicesManager.commonDocWS(key:url, onCompletion: { response in
+        WebServicesManager.commonDocWS(key:url, view: self.view, onCompletion: { response in
             
                 self.textContent = response!["description"].string
                 self.strTitle  = response!["title"].string

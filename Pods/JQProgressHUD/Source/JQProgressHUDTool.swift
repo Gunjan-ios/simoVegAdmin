@@ -12,7 +12,7 @@ import UIKit
 open class JQProgressHUDTool: NSObject {
 
     @discardableResult
-    public class func jq_showNormalHUD(view: UIView? = UIApplication.shared.windows.last, msg: String? = "",  isNeedmask: Bool? = false, isUserInteractionEnabled: Bool? = false, animation: Bool? = false) -> JQProgressHUD {
+    public class func jq_showNormalHUD(view: UIView? =  UIApplication.shared.windows.last { $0.isKeyWindow }, msg: String? = "",  isNeedmask: Bool? = false, isUserInteractionEnabled: Bool? = false, animation: Bool? = false) -> JQProgressHUD {
         
         let hud: JQProgressHUD = JQProgressHUD.showHUD(addTo: view!, animation: animation)
         hud.isNeedMask = isNeedmask!
@@ -26,7 +26,7 @@ open class JQProgressHUDTool: NSObject {
     }
     
     @discardableResult
-    public class func jq_showCustomHUD(view: UIView? = UIApplication.shared.windows.last, msg: String? = "", isNeedmask: Bool? = false, isUserInteractionEnabled: Bool? = false, animation: Bool? = false) -> JQProgressHUD {
+    public class func jq_showCustomHUD(view: UIView? =  UIApplication.shared.windows.last { $0.isKeyWindow}, msg: String? = "", isNeedmask: Bool? = false, isUserInteractionEnabled: Bool? = true, animation: Bool? = true) -> JQProgressHUD {
         
         let hud: JQProgressHUD = JQProgressHUD.showHUD(addTo: view!, animation: animation!)
         hud.isNeedMask = isNeedmask!
@@ -39,7 +39,7 @@ open class JQProgressHUDTool: NSObject {
     }
     
     @discardableResult
-    public class func jq_showCircularHUD(view: UIView? = UIApplication.shared.windows.last, msg: String? = "",progress: CGFloat? = 0, isNeedmask: Bool? = false, isUserInteractionEnabled: Bool? = false, animation: Bool? = false) -> JQProgressHUD {
+    public class func jq_showCircularHUD(view: UIView? =  UIApplication.shared.windows.last { $0.isKeyWindow }, msg: String? = "",progress: CGFloat? = 0, isNeedmask: Bool? = false, isUserInteractionEnabled: Bool? = false, animation: Bool? = false) -> JQProgressHUD {
         
         var  hud: JQProgressHUD
         hud = JQProgressHUD.showHUD(addTo: view!, animation: animation!)
@@ -55,7 +55,7 @@ open class JQProgressHUDTool: NSObject {
     }
     
     @discardableResult
-    public class func jq_showOvalHUD(view: UIView? = UIApplication.shared.windows.last, msg: String? = "", isNeedmask: Bool? = false, isUserInteractionEnabled: Bool? = false, animation: Bool? = false) -> JQProgressHUD {
+    public class func jq_showOvalHUD(view: UIView? = UIApplication.shared.windows.last { $0.isKeyWindow }, msg: String? = "", isNeedmask: Bool? = false, isUserInteractionEnabled: Bool? = false, animation: Bool? = false) -> JQProgressHUD {
         
         var  hud: JQProgressHUD
         hud = JQProgressHUD.showHUD(addTo: view!, animation: animation!)
@@ -71,7 +71,7 @@ open class JQProgressHUDTool: NSObject {
     }
     
     @discardableResult
-    public class func jq_showImageHUD(view: UIView? = UIApplication.shared.windows.last, msg: String? = "",imageName: String? = "", isNeedmask: Bool? = false, isUserInteractionEnabled: Bool? = false, animation: Bool? = false) -> JQProgressHUD {
+    public class func jq_showImageHUD(view: UIView? =  UIApplication.shared.windows.last { $0.isKeyWindow }, msg: String? = "",imageName: String? = "", isNeedmask: Bool? = false, isUserInteractionEnabled: Bool? = false, animation: Bool? = false) -> JQProgressHUD {
         
         let hud: JQProgressHUD = JQProgressHUD.showHUD(addTo: view!)
         hud.isNeedMask = isNeedmask!
@@ -88,7 +88,7 @@ open class JQProgressHUDTool: NSObject {
     }
     
     @discardableResult
-    public class func jq_showToastHUD(view: UIView? = UIApplication.shared.windows.last, msg: String? = "",duration: TimeInterval? = 3.0, isUserInteractionEnabled: Bool? = false, animation: Bool? = false) -> JQProgressHUD {
+    public class func jq_showToastHUD(view: UIView? = UIApplication.shared.windows.last { $0.isKeyWindow }, msg: String? = "",duration: TimeInterval? = 3.0, isUserInteractionEnabled: Bool? = false, animation: Bool? = false) -> JQProgressHUD {
         
         let hud: JQProgressHUD = JQProgressHUD.showToastHUD(addTo: view!, animation: animation!)
         hud.duration = duration!
@@ -97,7 +97,7 @@ open class JQProgressHUDTool: NSObject {
         return hud
     }
     
-    public class func jq_hideHUD(view: UIView? = UIApplication.shared.windows.last) {
+    public class func jq_hideHUD(view: UIView? = UIApplication.shared.windows.last { $0.isKeyWindow }) {
         let _ = JQProgressHUD.hideHUD(fromView: view!)
     }
 }

@@ -37,9 +37,9 @@ let GENERAL_URL = "general"
 
 class WebServicesManager {
     
-    class func loginWS(mobile:String,password:String,onCompletion: ((JSON?) -> Void)? = nil, onError: ((Error?) -> Void)? = nil) {
+    class func loginWS(mobile:String,password:String,view:UIView ,onCompletion: ((JSON?) -> Void)? = nil, onError: ((Error?) -> Void)? = nil) {
         
-        Hud.showLoading(title: CS.Common.waiting)
+        Hud.showLoading(title: CS.Common.waiting, view: view)
         let parameters: Parameters = [
             CS.Params.mobile : mobile,
             CS.Params.password : password,
@@ -49,7 +49,7 @@ class WebServicesManager {
         print(parameters)
         print("Request :- \(strUrl)")
         Alamofire.request(strUrl, method: .post, parameters:parameters,encoding: JSONEncoding.default).responseJSON { (response) in
-            Hud.hideLoading()
+            Hud.hideLoading(view: view)
             guard let value = response.result.value
                 else {
                     if let err = response.error{
@@ -65,9 +65,9 @@ class WebServicesManager {
     }
 
     
-    class func changePasswordWS(user_id:String,new_password:String,old_password:String, onCompletion: ((JSON?) -> Void)? = nil, onError: ((Error?) -> Void)? = nil) {
+    class func changePasswordWS(user_id:String,new_password:String,old_password:String,view:UIView , onCompletion: ((JSON?) -> Void)? = nil, onError: ((Error?) -> Void)? = nil) {
         
-        Hud.showLoading(title: CS.Common.waiting)
+        Hud.showLoading(title: CS.Common.waiting, view: view)
         let parameters: Parameters = [
             CS.Params.user_id : user_id,
             CS.Params.new_password : new_password,
@@ -79,7 +79,7 @@ class WebServicesManager {
         print(parameters)
         print("Request :- \(strUrl)")
         Alamofire.request(strUrl, method: .post, parameters:parameters,encoding: JSONEncoding.default).responseJSON { (response) in
-            Hud.hideLoading()
+            Hud.hideLoading(view: view)
             
             
             guard let value = response.result.value
@@ -96,9 +96,9 @@ class WebServicesManager {
         }
     }
 
-    class func RESET_PASSWORD_WS(mobile:String,password:String, onCompletion: ((JSON?) -> Void)? = nil, onError: ((Error?) -> Void)? = nil) {
+    class func RESET_PASSWORD_WS(mobile:String,password:String,view:UIView , onCompletion: ((JSON?) -> Void)? = nil, onError: ((Error?) -> Void)? = nil) {
 
-        Hud.showLoading(title: CS.Common.waiting)
+        Hud.showLoading(title: CS.Common.waiting, view: view)
         let parameters: Parameters = [
             CS.Params.mobile : mobile,
             CS.Params.password : password,
@@ -108,7 +108,7 @@ class WebServicesManager {
         print(parameters)
         print("Request :- \(strUrl)")
         Alamofire.request(strUrl, method: .post, parameters:parameters,encoding: JSONEncoding.default).responseJSON { (response) in
-            Hud.hideLoading()
+            Hud.hideLoading(view: view)
 
 
             guard let value = response.result.value
@@ -124,9 +124,9 @@ class WebServicesManager {
             onCompletion!(json)
         }
     }
-    class func signUPWS(firstname:String,lastname:String,email:String,mobile:String,password:String,address:String, onCompletion: ((JSON?) -> Void)? = nil, onError: ((Error?) -> Void)? = nil) {
+    class func signUPWS(firstname:String,lastname:String,email:String,mobile:String,password:String,address:String,view:UIView , onCompletion: ((JSON?) -> Void)? = nil, onError: ((Error?) -> Void)? = nil) {
         
-        Hud.showLoading(title: CS.Common.waiting)
+        Hud.showLoading(title: CS.Common.waiting, view: view)
 
         let parameters: Parameters = [
             CS.Params.first_name : firstname,
@@ -141,7 +141,7 @@ class WebServicesManager {
         print(parameters)
         print("Request :- \(strUrl)")
         Alamofire.request(strUrl, method: .post, parameters:parameters,encoding: JSONEncoding.default).responseJSON { (response) in
-            Hud.hideLoading()
+            Hud.hideLoading(view: view)
             guard let value = response.result.value
                 else {
                     if let err = response.error{
@@ -157,9 +157,9 @@ class WebServicesManager {
         
     }
 
-    class func resendORForgotOtpWS(mobile:String, type : String, onCompletion: ((JSON?) -> Void)? = nil, onError: ((Error?) -> Void)? = nil) {
+    class func resendORForgotOtpWS(mobile:String, type : String,view:UIView , onCompletion: ((JSON?) -> Void)? = nil, onError: ((Error?) -> Void)? = nil) {
         
-        Hud.showLoading(title: CS.Common.waiting)
+        Hud.showLoading(title: CS.Common.waiting, view: view)
         let parameters: Parameters = [
             CS.Params.mobile : mobile]
         
@@ -174,7 +174,7 @@ class WebServicesManager {
         print("Request :- \(strUrl)")
         
         Alamofire.request(strUrl, method: .post, parameters:parameters,encoding: JSONEncoding.default).responseJSON { (response) in
-            Hud.hideLoading()
+            Hud.hideLoading(view: view)
             guard let value = response.result.value
                 else {
                     if let err = response.error{
@@ -190,9 +190,9 @@ class WebServicesManager {
         
     }
     
-    class func verifyOtpWS(otp:String, mobile:String, onCompletion: ((JSON?) -> Void)? = nil, onError: ((Error?) -> Void)? = nil) {
+    class func verifyOtpWS(otp:String, mobile:String,view:UIView , onCompletion: ((JSON?) -> Void)? = nil, onError: ((Error?) -> Void)? = nil) {
         
-        Hud.showLoading(title: CS.Common.waiting)
+        Hud.showLoading(title: CS.Common.waiting, view: view)
         let parameters: Parameters = [
             CS.Params.otp : otp,
             CS.Params.mobile : mobile
@@ -202,7 +202,7 @@ class WebServicesManager {
         print("Request :- \(strUrl)")
         
         Alamofire.request(strUrl, method: .post, parameters:parameters,encoding: JSONEncoding.default).responseJSON { (response) in
-            Hud.hideLoading()
+            Hud.hideLoading(view: view)
             
             
             guard let value = response.result.value
@@ -220,8 +220,8 @@ class WebServicesManager {
     }
     
     
-    class func  profileUpdateWS(formData:Parameters, onCompletion: ((JSON?) -> Void)? = nil, onError: ((Error?) -> Void)? = nil){
-        Hud.showLoading(title: CS.Common.waiting)
+    class func  profileUpdateWS(formData:Parameters,view:UIView , onCompletion: ((JSON?) -> Void)? = nil, onError: ((Error?) -> Void)? = nil){
+        Hud.showLoading(title: CS.Common.waiting, view: view)
         
         let header: HTTPHeaders = [
             "Accept": "application/json",
@@ -250,7 +250,7 @@ class WebServicesManager {
                 upload.responseJSON { response in
                     switch response.result {
                     case .success(let value):
-                        Hud.hideLoading()
+                        Hud.hideLoading(view: view)
                         let json = JSON(value)
                         print(json)
                         onCompletion!(json)
@@ -262,7 +262,7 @@ class WebServicesManager {
                 }
                 
             case .failure(let error):
-                Hud.hideLoading()
+                Hud.hideLoading(view: view)
                 debugPrint(error)
                  onError? (error)
                 break
@@ -270,8 +270,8 @@ class WebServicesManager {
         }
     }
 
-    class func profileWS(user_id:String, onCompletion: ((JSON?) -> Void)? = nil, onError: ((Error?) -> Void)? = nil) {
-        Hud.showLoading(title: CS.Common.waiting)
+    class func profileWS(user_id:String,view:UIView , onCompletion: ((JSON?) -> Void)? = nil, onError: ((Error?) -> Void)? = nil) {
+        Hud.showLoading(title: CS.Common.waiting, view: view)
 
         let parameters: Parameters = [
             CS.Params.user_id : user_id
@@ -281,7 +281,7 @@ class WebServicesManager {
         print("Request :- \(strUrl)")
         
         Alamofire.request(strUrl, method: .post, parameters:parameters,encoding: JSONEncoding.default).responseJSON { (response) in
-            Hud.hideLoading()
+            Hud.hideLoading(view: view)
 
             guard let value = response.result.value
                 else {
@@ -296,21 +296,18 @@ class WebServicesManager {
            onCompletion!(json)
         }
     }
-    class func orderList(user_id:String,order_date:String, onCompletion: ((JSON?) -> Void)? = nil, onError: ((Error?) -> Void)? = nil) {
+    class func orderList(user_id:String,order_date:String,view:UIView , onCompletion: ((JSON?) -> Void)? = nil, onError: ((Error?) -> Void)? = nil) {
 
-//        Hud.showLoading(title: CS.Common.waiting)
-        
+        Hud.showLoading(title: CS.Common.waiting, view: view)
         let parameters: Parameters = [
             CS.Params.user_id : user_id,
             CS.Params.order_date : order_date
         ]
-
-
         let strUrl = "\(BASE_URL)\(ORDERLIST_URL)"
         print(parameters)
         print("Request :- \(strUrl)")
         Alamofire.request(strUrl, method: .post, parameters:parameters,encoding: JSONEncoding.default).responseJSON { (response) in
-            Hud.hideLoading()
+            Hud.hideLoading(view: view)
             guard let value = response.result.value
                 else {
                     if let err = response.error{
@@ -324,9 +321,9 @@ class WebServicesManager {
             onCompletion!(json)
         }
     }
-    class func productList(ordered_products:Int,search:String, onCompletion: ((JSON?) -> Void)? = nil, onError: ((Error?) -> Void)? = nil) {
+    class func productList(ordered_products:Int,search:String,view:UIView , onCompletion: ((JSON?) -> Void)? = nil, onError: ((Error?) -> Void)? = nil) {
 
-//                Hud.showLoading(title: CS.Common.waiting)
+        Hud.showLoading(title: CS.Common.waiting, view: view)
 
         let parameters: Parameters = [
             CS.Params.is_active : ordered_products,
@@ -334,12 +331,11 @@ class WebServicesManager {
             CS.Params.ordered_products : ordered_products
         ]
 
-
         let strUrl = "\(BASE_URL)\(PRODUCTLIST_URL)"
         print(parameters)
         print("Request :- \(strUrl)")
         Alamofire.request(strUrl, method: .post, parameters:parameters,encoding: JSONEncoding.default).responseJSON { (response) in
-            Hud.hideLoading()
+            Hud.hideLoading(view: view)
             guard let value = response.result.value
                 else {
                     if let err = response.error{
@@ -350,16 +346,17 @@ class WebServicesManager {
 
             let json = JSON(value)
             print(json)
+            Hud.hideLoading(view: view)
             onCompletion!(json)
         }
     }
 
-    class func orderPlaceList(ordered_products:String?,user_id:String, order_id : String, onCompletion: ((JSON?) -> Void)? = nil, onError: ((Error?) -> Void)? = nil) {
+    class func orderPlaceList(ordered_products:String?,user_id:String, order_id : String,view:UIView , onCompletion: ((JSON?) -> Void)? = nil, onError: ((Error?) -> Void)? = nil) {
 
-        //        Hud.showLoading(title: CS.Common.waiting)
+        Hud.showLoading(title: CS.Common.waiting, view: view)
 
         let parameters: Parameters = [
-            CS.Params.order_items : ordered_products ,
+            CS.Params.order_items : ordered_products as Any ,
             CS.Params.user_id : user_id,
 //            CS.Params.order_id : order_id
         ]
@@ -369,7 +366,7 @@ class WebServicesManager {
         print(parameters)
         print("Request :- \(strUrl)")
         Alamofire.request(strUrl, method: .post, parameters:parameters,encoding: JSONEncoding.default).responseJSON { (response) in
-            Hud.hideLoading()
+            Hud.hideLoading(view: view)
             guard let value = response.result.value
                 else {
                     if let err = response.error{
@@ -383,10 +380,35 @@ class WebServicesManager {
             onCompletion!(json)
         }
     }
+    class func updatePrice(ordered_products:String,view:UIView , onCompletion: ((JSON?) -> Void)? = nil, onError: ((Error?) -> Void)? = nil) {
 
-    class func commonDocWS(key:String, onCompletion: ((JSON?) -> Void)? = nil, onError: ((Error?) -> Void)? = nil) {
+        Hud.showLoading(title: CS.Common.waiting, view: view)
 
-        Hud.showLoading(title: CS.Common.waiting)
+        let parameters: Parameters = [
+            CS.Params.item_price : ordered_products,
+        ]
+
+        let strUrl = "\(BASE_URL)\(UPDATEPRICE_URL)"
+        print(parameters)
+        print("Request :- \(strUrl)")
+        Alamofire.request(strUrl, method: .post, parameters:parameters,encoding: JSONEncoding.default).responseJSON { (response) in
+            Hud.hideLoading(view: view)
+            guard let value = response.result.value
+                else {
+                    if let err = response.error{
+                        onError?(err)
+                        return
+                    }
+                    return }
+
+            let json = JSON(value)
+            print(json)
+            onCompletion!(json)
+        }
+    }
+    class func commonDocWS(key:String,view:UIView , onCompletion: ((JSON?) -> Void)? = nil, onError: ((Error?) -> Void)? = nil) {
+
+        Hud.showLoading(title: CS.Common.waiting, view: view)
         let parameters: Parameters = [CS.Params.key : key]
         
         let strUrl = "\(BASE_URL)\(GENERAL_URL)"
@@ -394,7 +416,7 @@ class WebServicesManager {
         print("Request :- \(strUrl)")
 
         Alamofire.request(strUrl, method: .post, parameters:parameters,encoding: JSONEncoding.default).responseJSON { (response) in
-            Hud.hideLoading()
+            Hud.hideLoading(view: view)
             guard let value = response.result.value
                 else {
                     if let err = response.error{

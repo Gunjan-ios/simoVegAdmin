@@ -111,7 +111,7 @@ class OTPvc: ParentClass,UITextFieldDelegate  {
     
     func apiCallingFuncation(){
         
-        WebServicesManager.resendORForgotOtpWS(mobile: ConnflixUtilities.shared.mobile!, type: "Resend",  onCompletion: { response in
+        WebServicesManager.resendORForgotOtpWS(mobile: ConnflixUtilities.shared.mobile!, type: "Resend", view: self.view,  onCompletion: { response in
             self.showAlert(message: response!["message"].stringValue, type: AlertType.error, navBar: false)
         },onError:{ error in
             
@@ -126,7 +126,7 @@ class OTPvc: ParentClass,UITextFieldDelegate  {
     
     func apiCallingFuncationForVerify(){
         
-        WebServicesManager.verifyOtpWS (otp: strPin, mobile: ConnflixUtilities.shared.mobile!,onCompletion: { response in
+        WebServicesManager.verifyOtpWS (otp: strPin, mobile: ConnflixUtilities.shared.mobile!,view: self.view ,onCompletion: { response in
             
             if response!["success"].intValue == 1 {
                 if self.formregister{

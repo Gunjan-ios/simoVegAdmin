@@ -71,7 +71,7 @@ class ForgotPassword: ParentClass,UITextFieldDelegate,CountryPickerViewDelegate,
         otpview.formregister = false
         self.navigationController?.pushViewController(otpview, animated: true)
         return;
-        WebServicesManager.resendORForgotOtpWS(mobile: txt_email.text!, type: "Forgot",  onCompletion: { response in
+        WebServicesManager.resendORForgotOtpWS(mobile: txt_email.text!, type: "Forgot", view: self.view,  onCompletion: { response in
             
             if response!["success"].intValue == 1 {
                 

@@ -179,7 +179,7 @@ class RegisterVC: ParentClass,UITextFieldDelegate,UIImagePickerControllerDelegat
     
     func apiCallingFuncation(){
         
-        WebServicesManager.signUPWS(firstname: txt_firstname.text!.trim(), lastname: txt_lastname.text!.trim(),email: txt_email.text!.trim(), mobile: txt_mobile.text!.trim(), password: txt_Password.text!.trim(), address: "", onCompletion: { response in
+        WebServicesManager.signUPWS(firstname: txt_firstname.text!.trim(), lastname: txt_lastname.text!.trim(),email: txt_email.text!.trim(), mobile: txt_mobile.text!.trim(), password: txt_Password.text!.trim(), address: "", view: self.view, onCompletion: { response in
             
             if response!["success"].intValue == 1 {
                 let otpview = self.storyboard?.instantiateViewController(withIdentifier: CS.Identifiers.OTPvc) as! OTPvc

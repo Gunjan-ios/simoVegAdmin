@@ -32,8 +32,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "146"
             endingLineNumber = "146"
-            landmarkName = "textFieldDidEndEditing(_:)"
-            landmarkType = "7">
+            landmarkName = "PlaceOrderTableViewCell"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -71,16 +71,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "03682445-4E4E-4CA6-B356-BF8909F9646B"
+            uuid = "75E7A73B-225E-4ACD-BB21-EB3D21062388"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Simo Vegetables/Classes/TAB/UpdatePriceController.swift"
+            filePath = "Simo Vegetables/Classes/Webservice/WebServicesManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "139"
-            endingLineNumber = "139"
-            landmarkName = "apiCallingFuncation(strDate:)"
+            startingLineNumber = "385"
+            endingLineNumber = "385"
+            landmarkName = "updatePrice(ordered_products:view:onCompletion:onError:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
