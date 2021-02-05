@@ -16,8 +16,8 @@ let BASE_Admin_URL = "https://digitalfriend.co.in/simo_vegetables/api/"
 
 let ItunesUrl = "https://apps.apple.com/us/app/connflix/id1546423387"
 
-//let SIGNIN_URL = "admin/login"
-let SIGNIN_URL = "user/signin"
+let SIGNIN_URL = "admin/login"
+//let SIGNIN_URL = "user/signin"
 
 let SIGNUP_URL = "user/signup"
 let PROFILEUPDATE_URL = "user/update_profile"
@@ -45,7 +45,7 @@ class WebServicesManager {
             CS.Params.password : password,
             ]
         
-        let strUrl = "\(BASE_URL)\(SIGNIN_URL)"
+        let strUrl = "\(BASE_Admin_URL)\(SIGNIN_URL)"
         print(parameters)
         print("Request :- \(strUrl)")
         Alamofire.request(strUrl, method: .post, parameters:parameters,encoding: JSONEncoding.default).responseJSON { (response) in
@@ -300,7 +300,7 @@ class WebServicesManager {
 
         Hud.showLoading(title: CS.Common.waiting, view: view)
         let parameters: Parameters = [
-            CS.Params.user_id : user_id,
+//            CS.Params.user_id : user_id,
             CS.Params.order_date : order_date
         ]
         let strUrl = "\(BASE_URL)\(ORDERLIST_URL)"
@@ -321,14 +321,15 @@ class WebServicesManager {
             onCompletion!(json)
         }
     }
-    class func productList(ordered_products:Int,search:String,view:UIView , onCompletion: ((JSON?) -> Void)? = nil, onError: ((Error?) -> Void)? = nil) {
+    class func productList(ordered_products:Int,search:String,view:UIView ,date:String, onCompletion: ((JSON?) -> Void)? = nil, onError: ((Error?) -> Void)? = nil) {
 
         Hud.showLoading(title: CS.Common.waiting, view: view)
 
         let parameters: Parameters = [
             CS.Params.is_active : ordered_products,
             CS.Params.search : search,
-            CS.Params.ordered_products : ordered_products
+            CS.Params.ordered_products : ordered_products,
+            CS.Params.date : date
         ]
 
         let strUrl = "\(BASE_URL)\(PRODUCTLIST_URL)"

@@ -37,6 +37,8 @@ class CS {
         static let order_date = "order_date"
         static let item_price = "item_price"
         static let key = "key"
+        static let admin_id = "admin_id"
+        static let date = "date"
 
         //SAVE Data KEY
 //        static let userData = "userData"

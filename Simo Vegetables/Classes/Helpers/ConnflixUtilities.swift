@@ -48,6 +48,19 @@ class ConnflixUtilities: NSObject {
             }
         }
     }
+
+    //MARK: Logged in userID
+    var admin_id: String? {
+        get {
+            return UserDefaults.standard.object(forKey: CS.Params.admin_id) as? String
+        }
+        set {
+            if let value = newValue {
+                UserDefaults.standard.setValue(value, forKey: CS.Params.admin_id)
+                UserDefaults.standard.synchronize()
+            }
+        }
+    }
 //    var myWallet: Int? {
 //        get {
 //            return UserDefaults.standard.object(forKey: "myWallet") as? Int

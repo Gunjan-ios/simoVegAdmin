@@ -26,6 +26,7 @@ class EditProfileViewController: ParentClass,UIImagePickerControllerDelegate,UIN
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
         loadHeaderView()
         // Do any additional setup after loading the view.
     }
@@ -65,36 +66,36 @@ class EditProfileViewController: ParentClass,UIImagePickerControllerDelegate,UIN
         self.view.addSubview(scrlView)
         
         var yInternalSpace = YTEXTFILED_PADDING
+//
+//        imgProfile = UIImageView (frame: CGRect (x: X_PADDING, y: yInternalSpace, width: controls_height, height: controls_height))
+//        imgProfile.sd_setImage(with:URL (string:userDic.profilePic!) , placeholderImage: UIImage(named: "gallery"), options: .progressiveLoad, completed: nil)
+//        imgProfile.layer.cornerRadius = CGFloat(controls_height/2)
+//        imgProfile.layer.borderWidth = borderWidth
+//        imgProfile.layer.borderColor = colorPrimary.cgColor
+//        imgProfile.clipsToBounds = true
+//        scrlView.addSubview(imgProfile)
+//
+//
+//        let buttonEdit = UIButton(frame: CGRect(x:Int(imgProfile.frame.width) , y: yInternalSpace, width: 25  , height: 25))
+//        buttonEdit.setImage(UIImage (named: "edit"), for: .normal)
+//        buttonEdit.layer.cornerRadius = buttonEdit.bounds.width/2
+//        buttonEdit.imageEdgeInsets = UIEdgeInsets (top: 5, left: 5, bottom: 5, right: 5)
+//        buttonEdit.backgroundColor = colorPrimary
+//        buttonEdit.contentHorizontalAlignment = .center
+//        buttonEdit.addTarget(self, action: #selector(onProfilePicturePressed(_:)), for: .touchUpInside)
+//        scrlView.addSubview(buttonEdit)
         
-        imgProfile = UIImageView (frame: CGRect (x: X_PADDING, y: yInternalSpace, width: controls_height, height: controls_height))
-        imgProfile.sd_setImage(with:URL (string:userDic.profilePic!) , placeholderImage: UIImage(named: "gallery"), options: .progressiveLoad, completed: nil)
-        imgProfile.layer.cornerRadius = CGFloat(controls_height/2)
-        imgProfile.layer.borderWidth = borderWidth
-        imgProfile.layer.borderColor = colorPrimary.cgColor
-        imgProfile.clipsToBounds = true
-        scrlView.addSubview(imgProfile)
         
-        
-        let buttonEdit = UIButton(frame: CGRect(x:Int(imgProfile.frame.width) , y: yInternalSpace, width: 25  , height: 25))
-        buttonEdit.setImage(UIImage (named: "edit"), for: .normal)
-        buttonEdit.layer.cornerRadius = buttonEdit.bounds.width/2
-        buttonEdit.imageEdgeInsets = UIEdgeInsets (top: 5, left: 5, bottom: 5, right: 5)
-        buttonEdit.backgroundColor = colorPrimary
-        buttonEdit.contentHorizontalAlignment = .center
-        buttonEdit.addTarget(self, action: #selector(onProfilePicturePressed(_:)), for: .touchUpInside)
-        scrlView.addSubview(buttonEdit)
-        
-        
-        let btnChangePassword = UIButton (frame: CGRect(x:Int(imgProfile.bounds.width) + X_PADDING * 2, y: yInternalSpace + 25, width: 130 , height: 21))
-        btnChangePassword.setTitle("Change Password", for: .normal)
-        btnChangePassword.contentHorizontalAlignment = .center
-        btnChangePassword.backgroundColor = colorCommonBackground
-        btnChangePassword.layer.cornerRadius = radius
-        btnChangePassword.titleLabel?.font = UIFont .boldSystemFont(ofSize: 12)
-        btnChangePassword.addTarget(self, action: #selector(onChangePasswordPressed), for: .touchUpInside)
-        scrlView.addSubview(btnChangePassword)
-        
-        yInternalSpace +=  Int(imgProfile.bounds.height) + YTEXTFILED_PADDING*2
+//        let btnChangePassword = UIButton (frame: CGRect(x:Int(imgProfile.bounds.width) + X_PADDING * 2, y: yInternalSpace + 25, width: 130 , height: 21))
+//        btnChangePassword.setTitle("Change Password", for: .normal)
+//        btnChangePassword.contentHorizontalAlignment = .center
+//        btnChangePassword.backgroundColor = colorCommonBackground
+//        btnChangePassword.layer.cornerRadius = radius
+//        btnChangePassword.titleLabel?.font = UIFont .boldSystemFont(ofSize: 12)
+//        btnChangePassword.addTarget(self, action: #selector(onChangePasswordPressed), for: .touchUpInside)
+//        scrlView.addSubview(btnChangePassword)
+//
+//        yInternalSpace +=  Int(imgProfile.bounds.height) + YTEXTFILED_PADDING*2
         
 //        txtFirst = MDCOutlinedTextField (frame: CGRect (x: X_PADDING, y: yInternalSpace, width: SCREEN_WIDTH - X_PADDING*2, height: NEXT_BUTTON_HEIGHT))
 //
@@ -181,7 +182,7 @@ class EditProfileViewController: ParentClass,UIImagePickerControllerDelegate,UIN
             
             if response!["success"].intValue == 1 {
                 
-                self.apiCallingFuncationProfile()
+//                self.apiCallingFuncationProfile()
                 self.showAlert(message: response!["message"].stringValue, type: AlertType.success, navBar: false)
 
             } else {
@@ -201,14 +202,14 @@ class EditProfileViewController: ParentClass,UIImagePickerControllerDelegate,UIN
         WebServicesManager.profileWS(user_id: ConnflixUtilities.shared.UserID!, view: self.view, onCompletion: { response in
 
             if response!["success"].intValue == 1 {
-                self.userDic  = User.init(fromJson: response!["user"])
+                self.userDic  = User.init(fromJson: response!["admin"])
                 ConnflixUtilities.shared.mobile =  self.userDic .mobile
-                ConnflixUtilities.shared.UserID =  self.userDic .userId
+                ConnflixUtilities.shared.admin_id =  self.userDic .userId
                 ConnflixUtilities.shared.email =  self.userDic .email
                 ConnflixUtilities.shared.profilePic =  self.userDic .profilePic
                 ConnflixUtilities.shared.firstname =  self.userDic .firstName
                 ConnflixUtilities.shared.lastname =  self.userDic .lastName
-                ParentClass.sharedInstance.saveJSON(json:response!["user"] , key: CS.Saved.userData)
+                ParentClass.sharedInstance.saveJSON(json:response!["admin"] , key: CS.Saved.userData)
                 self.delegate?.reloadProfileData()
             } else {
                 self.showAlert(message: response!["message"].stringValue, type: AlertType.error, navBar: false)

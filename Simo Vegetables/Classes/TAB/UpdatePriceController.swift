@@ -118,7 +118,7 @@ class UpdatePriceController: ParentClass  ,UITableViewDelegate,UITableViewDataSo
 
     func apiCallingFuncation( strDate : String){
 
-        WebServicesManager .productList(ordered_products: 1, search: "", view: self.view, onCompletion: { response in
+        WebServicesManager .productList(ordered_products: 1, search: "", view: self.view, date: strDate, onCompletion: { response in
 
             if response!["success"].intValue == 1 {
                 let res =  response!["products"].arrayValue

@@ -33,7 +33,7 @@ class User : NSObject, NSCoding{
         lastName = json["last_name"].stringValue
         mobile = json["mobile"].stringValue
         profilePic = json["profile_pic"].stringValue
-        userId = json["user_id"].stringValue
+        userId = json["admin_id"].stringValue
 	}
 
 	/**

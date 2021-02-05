@@ -50,15 +50,15 @@ class OrderListCell : UITableViewCell {
 
     var subView : UIView = {
         let view = UIView()
-        view.layer.cornerRadius = radius
-        view.backgroundColor = .systemGray6
-        view.layer.masksToBounds = true
-        // set the shadow properties
-        view.layer.shadowColor = UIColor.black.cgColor
-        view.layer.shadowOffset = .zero
-        view.layer.shadowOpacity = 0.3
-        view.layer.shadowRadius = 5.0
-        view.layer.masksToBounds =  false
+//        view.layer.cornerRadius = radius
+//        view.backgroundColor = .systemGray6
+//        view.layer.masksToBounds = true
+//        // set the shadow properties
+//        view.layer.shadowColor = UIColor.black.cgColor
+//        view.layer.shadowOffset = .zero
+//        view.layer.shadowOpacity = 0.3
+//        view.layer.shadowRadius = 5.0
+//        view.layer.masksToBounds =  false
         return view
     }()
 
@@ -67,7 +67,7 @@ class OrderListCell : UITableViewCell {
         
         self.backgroundColor = UIColor.systemGray4
 
-        subView.frame = CGRect (x: X_PADDING, y: Y_PADDING , width: SCREEN_WIDTH - X_PADDING*2, height: Int(TABLEVIEW_CELL_HEIGHT) - X_PADDING)
+        subView.frame = CGRect (x: 0, y: Y_PADDING , width: SCREEN_WIDTH , height: Int(TABLEVIEW_CELL_HEIGHT))
 
         imgItem.frame = CGRect (x: Y_PADDING, y: 15, width: 40, height: 40)
 //        imgItem.center = CGPoint (x: subView.frame.origin.x, y: imgItem.frame.origin.y)
@@ -80,7 +80,7 @@ class OrderListCell : UITableViewCell {
 
 
         self.lblSubFieldName.frame = CGRect(x: xPosition, y:yPosition , width: SCREEN_WIDTH - xPosition - 100 , height: CELL_LABEL_HEIGHT)
-        self.btnqunty.frame = CGRect (x: SCREEN_WIDTH - X_PADDING -  100 , y: yPosition , width: 90, height: CELL_LABEL_HEIGHT)
+        self.btnqunty.frame = CGRect (x: SCREEN_WIDTH - X_PADDING -  110 , y: yPosition , width: 90, height: CELL_LABEL_HEIGHT)
 
         yPosition +=  Int(btnqunty.bounds.height)
 

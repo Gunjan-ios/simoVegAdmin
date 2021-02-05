@@ -78,10 +78,10 @@ class MoreViewController: ParentClass,UITextFieldDelegate {
         phn.textColor = .white
         headerview.addSubview(phn)
         
-        let btnEdit = UIButton (frame: CGRect (x: SCREEN_WIDTH - TOP_HEADER_HEIGHT, y: 30, width: 40, height: 40))
-        btnEdit.setImage(UIImage (named: "edit"), for: .normal)
-        btnEdit.addTarget(self, action: #selector(onEditPressed), for: .touchUpInside)
-        headerview.addSubview(btnEdit)
+//        let btnEdit = UIButton (frame: CGRect (x: SCREEN_WIDTH - TOP_HEADER_HEIGHT, y: 30, width: 40, height: 40))
+//        btnEdit.setImage(UIImage (named: "edit"), for: .normal)
+//        btnEdit.addTarget(self, action: #selector(onEditPressed), for: .touchUpInside)
+//        headerview.addSubview(btnEdit)
         
         yPosition += Int(headerview.bounds.height) +  Y_PADDING
         

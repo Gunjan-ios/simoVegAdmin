@@ -66,8 +66,8 @@ class LoginVC: ParentClass ,UITextFieldDelegate,CountryPickerViewDelegate, Count
         txt_User.delegate = self
         txt_Password.delegate = self
         MadokaTextField.appearance().tintColor = .white
-        txt_User.text = "1231231231"
-        txt_Password.text = "123"
+        txt_User.text = "9016493160"
+        txt_Password.text = "admin@123"
 //        setupCountryPicker()
         UDID =  KeychainManager() .getDeviceIdentifierFromKeychain()
         print(UDID)
@@ -88,7 +88,7 @@ class LoginVC: ParentClass ,UITextFieldDelegate,CountryPickerViewDelegate, Count
             
             if response!["success"].intValue == 1 {
                 
-                let userData = User.init(fromJson: response!["user"])
+                let userData = User.init(fromJson: response!["admin"])
                 ConnflixUtilities.shared.mobile = userData.mobile
                 ConnflixUtilities.shared.UserID = userData.userId
                 ConnflixUtilities.shared.email = userData.email
@@ -96,7 +96,7 @@ class LoginVC: ParentClass ,UITextFieldDelegate,CountryPickerViewDelegate, Count
                 ConnflixUtilities.shared.firstname = userData.firstName
                 ConnflixUtilities.shared.lastname = userData.lastName
                 ConnflixUtilities.shared.lastname = userData.lastName
-                ParentClass.sharedInstance.saveJSON(json:response!["user"] , key: CS.Saved.userData)
+                ParentClass.sharedInstance.saveJSON(json:response!["admin"] , key: CS.Saved.userData)
 
                 self.navigationController?.pushViewController(ParentClass.sharedInstance.customBouncesStyle(), animated: true)
             } else {

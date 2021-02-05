@@ -114,13 +114,13 @@ class CustomerWiseOrderViewController: ParentClass {
 
     func initTableview()  {
         // layer list
-        self.tblList = LUExpandableTableView (frame: CGRect(x: 0, y: yPosition, width: SCREEN_WIDTH, height: SCREEN_HEIGHT - yPosition), style: .grouped)
+        self.tblList = LUExpandableTableView (frame: CGRect(x: 0, y: yPosition, width: SCREEN_WIDTH, height: SCREEN_HEIGHT - yPosition), style: .insetGrouped)
         self.tblList.tag = 9999
         self.tblList.register(OrderListCell.self, forCellReuseIdentifier: "OrderListCell")
         tblList.register(UINib(nibName: "MyExpandableTableViewSectionHeader", bundle: Bundle.main), forHeaderFooterViewReuseIdentifier: "MySectionHeader")
         tblList.expandableTableViewDataSource = self
         tblList.expandableTableViewDelegate = self
-        self.tblList.separatorStyle = .none
+        self.tblList.separatorStyle = .singleLine
         self.tblList.separatorInset = UIEdgeInsets (top: 0, left: 0, bottom: 0, right: 0)
         self.tblList.showsVerticalScrollIndicator = false
         self.tblList.backgroundColor = .white
@@ -144,7 +144,7 @@ extension CustomerWiseOrderViewController: LUExpandableTableViewDataSource {
         let cell = tblList.dequeueReusableCell(withIdentifier: String(describing: OrderListCell.self)) as! OrderListCell
         cell.layoutMargins = UIEdgeInsets.zero
         cell.selectionStyle = .none
-        cell.backgroundColor = UIColor.clear
+        cell.backgroundColor = .systemGray6
 
         let dic = orderDetails[indexPath.section].items[indexPath.row]
         cell.btnqunty.setTitle("Qty : \(dic.quantity ?? "0")", for: .normal)
