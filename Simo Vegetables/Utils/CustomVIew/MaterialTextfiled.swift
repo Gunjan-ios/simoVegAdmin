@@ -26,16 +26,16 @@ extension MDCOutlinedTextField {
         
         let labelHeight = 25
 
-        setOutlineColor(UIColor.white, for: MDCTextControlState.normal)
-        label.textColor = UIColor.white
-        textColor = .white
-        setOutlineColor(.white, for:.normal)
-        setOutlineColor(.white, for:.editing)
-        label.textColor = UIColor.white
-        setTextColor(.white, for: .normal)
-        setTextColor(.white, for: .editing)
-        setFloatingLabelColor(.white, for: .normal)
-        setFloatingLabelColor(.white, for: .editing)
+        setOutlineColor(UIColor.black, for: MDCTextControlState.normal)
+        label.textColor = UIColor.black
+        textColor = .black
+        setOutlineColor(.black, for:.normal)
+        setOutlineColor(.black, for:.editing)
+        label.textColor = UIColor.black
+        setTextColor(.black, for: .normal)
+        setTextColor(.black, for: .editing)
+        setFloatingLabelColor(.black, for: .normal)
+        setFloatingLabelColor(.black, for: .editing)
         
         placeholder = pPlaceHolder
         label.text = PInfoText

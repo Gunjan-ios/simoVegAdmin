@@ -127,7 +127,7 @@ class LoginVC: ParentClass ,UITextFieldDelegate,CountryPickerViewDelegate, Count
     
     @IBAction func OnForgotPasswordpressd(_ sender: UIButton) {
         
-        let ForgotPassword = self.storyboard?.instantiateViewController(withIdentifier: CS.Identifiers.ForgotPassword) as! ForgotPassword
+        let ForgotPassword = EditProfileViewController()
         self.navigationController?.pushViewController(ForgotPassword, animated: true)
     
     }

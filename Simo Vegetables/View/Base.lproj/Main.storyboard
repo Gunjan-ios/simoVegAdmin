@@ -27,7 +27,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Simo_Vegetables" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Simo_Veg_Admin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -42,7 +42,7 @@
         <!--OTP-->
         <scene sceneID="PHW-iX-faq">
             <objects>
-                <viewController storyboardIdentifier="OTPvc" title="OTP" id="uwt-ry-0qe" customClass="OTPvc" customModule="Simo_Vegetables" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="OTPvc" title="OTP" id="uwt-ry-0qe" customClass="OTPvc" customModule="Simo_Veg_Admin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4k7-aC-Png">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -62,7 +62,7 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Tp-ff-dQx">
                                 <rect key="frame" x="0.0" y="94" width="414" height="802"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MQv-gS-L96" customClass="ThemeColorButton" customModule="Simo_Vegetables" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MQv-gS-L96" customClass="ThemeColorButton" customModule="Simo_Veg_Admin" customModuleProvider="target">
                                         <rect key="frame" x="299" y="430" width="100" height="40"/>
                                         <color key="backgroundColor" red="0.83529411760000005" green="0.31372549020000001" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -102,7 +102,7 @@
                                             <constraint firstAttribute="height" constant="100" id="u79-do-ane"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please enter the verification code that we have send on your registered Mobile number." textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="U5O-gQ-Pxh" customClass="BoldLabel" customModule="Simo_Vegetables" customModuleProvider="target">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please enter the verification code that we have send on your registered Mobile number." textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="U5O-gQ-Pxh" customClass="BoldLabel" customModule="Simo_Veg_Admin" customModuleProvider="target">
                                         <rect key="frame" x="10" y="178" width="394" height="70"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <color key="textColor" red="0.078431372550000003" green="0.1529411765" blue="0.37647058820000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -238,7 +238,7 @@
         <!--Forgot Password-->
         <scene sceneID="FHW-4z-5c4">
             <objects>
-                <viewController storyboardIdentifier="ForgotPassword" id="pap-9w-eoY" customClass="ForgotPassword" customModule="Simo_Vegetables" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ForgotPassword" id="pap-9w-eoY" customClass="ForgotPassword" customModule="Simo_Veg_Admin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CiP-y5-CwX">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -249,7 +249,7 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4n1-wS-ByD">
                                 <rect key="frame" x="0.0" y="94" width="414" height="802"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bhk-mi-GbO" customClass="ThemeColorButton" customModule="Simo_Vegetables" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bhk-mi-GbO" customClass="ThemeColorButton" customModule="Simo_Veg_Admin" customModuleProvider="target">
                                         <rect key="frame" x="60" y="354.5" width="294" height="40"/>
                                         <color key="backgroundColor" red="0.83529411760000005" green="0.31372549020000001" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -266,7 +266,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e1X-8l-eaL">
                                         <rect key="frame" x="20" y="247.5" width="374" height="67"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Mobile number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3oc-iO-sZA" customClass="MyTextfiled" customModule="Simo_Vegetables" customModuleProvider="target">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Mobile number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3oc-iO-sZA" customClass="MyTextfiled" customModule="Simo_Veg_Admin" customModuleProvider="target">
                                                 <rect key="frame" x="41" y="12" width="333" height="50"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -323,7 +323,7 @@
                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="chg-Ju-0HR">
                                         <rect key="frame" x="20" y="235.5" width="369" height="4"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="justified" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rh7-ZY-orj" customClass="CountryTextfiled" customModule="Simo_Vegetables" customModuleProvider="target">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="justified" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rh7-ZY-orj" customClass="CountryTextfiled" customModule="Simo_Veg_Admin" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="12" width="369" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="sfJ-YH-SMe"/>
@@ -452,7 +452,7 @@
         <!--Sign Up-->
         <scene sceneID="53V-GX-3Hk">
             <objects>
-                <viewController storyboardIdentifier="RegisterVC" id="lY7-78-wTx" customClass="RegisterVC" customModule="Simo_Vegetables" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RegisterVC" id="lY7-78-wTx" customClass="RegisterVC" customModule="Simo_Veg_Admin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OKt-Uo-MSB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -475,7 +475,7 @@
                                     <view hidden="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YbF-rF-uyc">
                                         <rect key="frame" x="20" y="255" width="335" height="67"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="justified" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JW3-Bd-jLe" customClass="CountryTextfiled" customModule="Simo_Vegetables" customModuleProvider="target">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="justified" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JW3-Bd-jLe" customClass="CountryTextfiled" customModule="Simo_Veg_Admin" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="12" width="335" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="V1b-1S-r31"/>
@@ -525,7 +525,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9He-BP-QKG">
                                         <rect key="frame" x="20" y="30" width="335" height="67"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="First Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NnM-Hv-blU" customClass="MyTextfiled" customModule="Simo_Vegetables" customModuleProvider="target">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="First Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NnM-Hv-blU" customClass="MyTextfiled" customModule="Simo_Veg_Admin" customModuleProvider="target">
                                                 <rect key="frame" x="41" y="12" width="294" height="50"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -568,7 +568,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CJS-7g-RE7">
                                         <rect key="frame" x="20" y="180" width="335" height="67"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="justified" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="W0E-Rb-220" customClass="MyTextfiled" customModule="Simo_Vegetables" customModuleProvider="target">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="justified" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="W0E-Rb-220" customClass="MyTextfiled" customModule="Simo_Veg_Admin" customModuleProvider="target">
                                                 <rect key="frame" x="41" y="12" width="294" height="50"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -611,7 +611,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bva-jN-ItD">
                                         <rect key="frame" x="20" y="255" width="335" height="67"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Mobile Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hsi-E2-LpF" customClass="MyTextfiled" customModule="Simo_Vegetables" customModuleProvider="target">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Mobile Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hsi-E2-LpF" customClass="MyTextfiled" customModule="Simo_Veg_Admin" customModuleProvider="target">
                                                 <rect key="frame" x="41" y="14" width="294" height="50"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -649,7 +649,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FCl-OC-R28">
                                         <rect key="frame" x="20" y="330" width="335" height="67"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="L14-Nc-FfN" customClass="MyTextfiled" customModule="Simo_Vegetables" customModuleProvider="target">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="L14-Nc-FfN" customClass="MyTextfiled" customModule="Simo_Veg_Admin" customModuleProvider="target">
                                                 <rect key="frame" x="41" y="14" width="294" height="50"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -687,7 +687,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZDw-1F-o1B">
                                         <rect key="frame" x="20" y="405" width="335" height="67"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Confirm Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2DN-5L-3EL" customClass="MyTextfiled" customModule="Simo_Vegetables" customModuleProvider="target">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Confirm Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2DN-5L-3EL" customClass="MyTextfiled" customModule="Simo_Veg_Admin" customModuleProvider="target">
                                                 <rect key="frame" x="41" y="14" width="294" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="y3e-F1-pUC"/>
@@ -733,7 +733,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aGt-ef-KmV">
                                         <rect key="frame" x="20" y="480" width="335" height="67"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Dbo-N6-MLU" customClass="MyTextfiled" customModule="Simo_Vegetables" customModuleProvider="target">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Dbo-N6-MLU" customClass="MyTextfiled" customModule="Simo_Veg_Admin" customModuleProvider="target">
                                                 <rect key="frame" x="41" y="14" width="294" height="50"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -783,7 +783,7 @@
                                             <action selector="OnTCPressed:" destination="lY7-78-wTx" eventType="touchUpInside" id="i3T-qB-3Gr"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bBQ-9e-Vuk" customClass="ThemeColorButton" customModule="Simo_Vegetables" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bBQ-9e-Vuk" customClass="ThemeColorButton" customModule="Simo_Veg_Admin" customModuleProvider="target">
                                         <rect key="frame" x="105" y="630" width="183" height="40"/>
                                         <color key="backgroundColor" red="0.83529411760000005" green="0.31372549020000001" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -797,7 +797,7 @@
                                             <action selector="OnSubmitPressed:" destination="lY7-78-wTx" eventType="touchUpInside" id="PVW-wT-ZyT"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="srT-AE-boq" customClass="RegularFontButton" customModule="Simo_Vegetables" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="srT-AE-boq" customClass="RegularFontButton" customModule="Simo_Veg_Admin" customModuleProvider="target">
                                         <rect key="frame" x="24" y="694" width="329" height="31"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="31" id="XDl-ze-Bk8"/>
@@ -809,21 +809,21 @@
                                                 <fragment content="Already have an account?">
                                                     <attributes>
                                                         <color key="NSColor" red="0.078431372550000003" green="0.1529411765" blue="0.37647058820000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <font key="NSFont" metaFont="system" size="15"/>
+                                                        <font key="NSFont" metaFont="label" size="15"/>
                                                         <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                     </attributes>
                                                 </fragment>
                                                 <fragment content=" ">
                                                     <attributes>
                                                         <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                                        <font key="NSFont" metaFont="system" size="15"/>
+                                                        <font key="NSFont" metaFont="label" size="15"/>
                                                         <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                     </attributes>
                                                 </fragment>
                                                 <fragment content="Login here!">
                                                     <attributes>
                                                         <color key="NSColor" red="0.078431372550000003" green="0.1529411765" blue="0.37647058820000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <font key="NSFont" metaFont="system" size="15"/>
+                                                        <font key="NSFont" metaFont="label" size="15"/>
                                                         <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                         <integer key="NSUnderline" value="1"/>
                                                     </attributes>
@@ -837,7 +837,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o5l-rt-Dto">
                                         <rect key="frame" x="20" y="105" width="335" height="67"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Last Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PQV-i8-gJv" customClass="MyTextfiled" customModule="Simo_Vegetables" customModuleProvider="target">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Last Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PQV-i8-gJv" customClass="MyTextfiled" customModule="Simo_Veg_Admin" customModuleProvider="target">
                                                 <rect key="frame" x="41" y="12" width="294" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="Q4T-NE-w7T"/>
@@ -1005,7 +1005,7 @@
         <!--Reset Password-->
         <scene sceneID="SEd-Xj-IjI">
             <objects>
-                <viewController storyboardIdentifier="ResetPasswordVC" title="Reset Password" id="XcR-0d-ASd" customClass="ResetPasswordVC" customModule="Simo_Vegetables" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ResetPasswordVC" title="Reset Password" id="XcR-0d-ASd" customClass="ResetPasswordVC" customModule="Simo_Veg_Admin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9Wx-7u-eXb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1025,7 +1025,7 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U1B-Qo-6pg">
                                 <rect key="frame" x="0.0" y="94" width="414" height="802"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F78-lH-IKQ" customClass="ThemeColorButton" customModule="Simo_Vegetables" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F78-lH-IKQ" customClass="ThemeColorButton" customModule="Simo_Veg_Admin" customModuleProvider="target">
                                         <rect key="frame" x="60" y="515.5" width="294" height="40"/>
                                         <color key="backgroundColor" red="0.83529411760000005" green="0.31372549020000001" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -1041,7 +1041,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z4v-Qr-RDp">
                                         <rect key="frame" x="20" y="328.5" width="374" height="67"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="New Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dpb-JR-0FK" customClass="MyTextfiled" customModule="Simo_Vegetables" customModuleProvider="target">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="New Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dpb-JR-0FK" customClass="MyTextfiled" customModule="Simo_Veg_Admin" customModuleProvider="target">
                                                 <rect key="frame" x="41" y="12" width="333" height="50"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="17"/>
@@ -1084,7 +1084,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QHV-fg-r8U">
                                         <rect key="frame" x="20" y="403.5" width="374" height="67"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Confirm New Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4zc-6a-f7A" customClass="MyTextfiled" customModule="Simo_Vegetables" customModuleProvider="target">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Confirm New Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4zc-6a-f7A" customClass="MyTextfiled" customModule="Simo_Veg_Admin" customModuleProvider="target">
                                                 <rect key="frame" x="41" y="12" width="333" height="50"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -1142,7 +1142,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J7k-36-X2r">
                                         <rect key="frame" x="20" y="253.5" width="374" height="67"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Old Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vyX-WL-4OR" customClass="MyTextfiled" customModule="Simo_Vegetables" customModuleProvider="target">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Old Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vyX-WL-4OR" customClass="MyTextfiled" customModule="Simo_Veg_Admin" customModuleProvider="target">
                                                 <rect key="frame" x="41" y="12" width="333" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="fxJ-BN-Jt0"/>
@@ -1276,7 +1276,7 @@
         <!--Login-->
         <scene sceneID="JRk-Lx-Fgb">
             <objects>
-                <viewController storyboardIdentifier="LoginVC" id="xov-Fd-tWk" customClass="LoginVC" customModule="Simo_Vegetables" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginVC" id="xov-Fd-tWk" customClass="LoginVC" customModule="Simo_Veg_Admin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fyg-nQ-22D">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="700"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1315,7 +1315,7 @@
                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z2Y-3Q-qBg">
                                         <rect key="frame" x="20" y="162" width="335" height="0.0"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8BS-bZ-Ohd" customClass="CountryTextfiled" customModule="Simo_Vegetables" customModuleProvider="target">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8BS-bZ-Ohd" customClass="CountryTextfiled" customModule="Simo_Veg_Admin" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="12" width="335" height="0.0"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" id="phg-8O-uuV"/>
@@ -1342,10 +1342,10 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jbW-rt-RWj">
                                         <rect key="frame" x="20" y="170" width="335" height="67"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Mobile number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Iwo-AG-tC0" customClass="MyTextfiled" customModule="Simo_Vegetables" customModuleProvider="target">
-                                                <rect key="frame" x="41" y="12" width="294" height="50"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Mobile number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Iwo-AG-tC0" customClass="MyTextfiled" customModule="Simo_Veg_Admin" customModuleProvider="target">
+                                                <rect key="frame" x="41" y="0.0" width="294" height="67"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="50" id="r3F-Am-eZt"/>
+                                                    <constraint firstAttribute="height" constant="67" id="r3F-Am-eZt"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="phonePad" returnKeyType="next"/>
@@ -1357,12 +1357,12 @@
                                                         <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="placeholderFontScale">
-                                                        <integer key="value" value="1"/>
+                                                        <real key="value" value="1"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </textField>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="message" translatesAutoresizingMaskIntoConstraints="NO" id="aCB-js-Ywv">
-                                                <rect key="frame" x="6" y="17" width="30" height="30"/>
+                                                <rect key="frame" x="6" y="28" width="30" height="30"/>
                                                 <color key="tintColor" red="0.078431372550000003" green="0.1529411765" blue="0.37647058820000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="30" id="YAp-j0-ktd"/>
@@ -1371,14 +1371,13 @@
                                             </imageView>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="aCB-js-Ywv" secondAttribute="bottom" constant="20" id="5fm-oQ-Kii"/>
                                             <constraint firstAttribute="trailing" secondItem="Iwo-AG-tC0" secondAttribute="trailing" id="AKr-ea-HDt"/>
                                             <constraint firstItem="aCB-js-Ywv" firstAttribute="leading" secondItem="jbW-rt-RWj" secondAttribute="leading" constant="6" id="BNA-3q-Eil"/>
                                             <constraint firstItem="Iwo-AG-tC0" firstAttribute="leading" secondItem="aCB-js-Ywv" secondAttribute="trailing" constant="5" id="NxT-jQ-yu2"/>
-                                            <constraint firstItem="Iwo-AG-tC0" firstAttribute="top" secondItem="jbW-rt-RWj" secondAttribute="top" constant="12" id="kl2-6g-1ST"/>
-                                            <constraint firstAttribute="bottom" secondItem="Iwo-AG-tC0" secondAttribute="bottom" constant="5" id="nSz-AX-s3c"/>
+                                            <constraint firstItem="Iwo-AG-tC0" firstAttribute="top" secondItem="jbW-rt-RWj" secondAttribute="top" id="kl2-6g-1ST"/>
+                                            <constraint firstAttribute="bottom" secondItem="Iwo-AG-tC0" secondAttribute="bottom" id="nSz-AX-s3c"/>
                                             <constraint firstAttribute="width" constant="335" id="niP-CC-k2g"/>
-                                            <constraint firstItem="aCB-js-Ywv" firstAttribute="top" secondItem="jbW-rt-RWj" secondAttribute="top" constant="17" id="pPq-Ay-a4a"/>
+                                            <constraint firstItem="aCB-js-Ywv" firstAttribute="top" secondItem="jbW-rt-RWj" secondAttribute="top" constant="28" id="pPq-Ay-a4a"/>
                                             <constraint firstAttribute="height" constant="67" id="pgY-XR-EI2"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
@@ -1390,8 +1389,8 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WCg-3a-tnZ">
                                         <rect key="frame" x="20" y="245" width="335" height="67"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Mb-w1-S5N" customClass="MyTextfiled" customModule="Simo_Vegetables" customModuleProvider="target">
-                                                <rect key="frame" x="41" y="14" width="294" height="50"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Mb-w1-S5N" customClass="MyTextfiled" customModule="Simo_Veg_Admin" customModuleProvider="target">
+                                                <rect key="frame" x="41" y="0.0" width="294" height="64"/>
                                                 <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits" returnKeyType="go" secureTextEntry="YES"/>
                                                 <userDefinedRuntimeAttributes>
@@ -1407,7 +1406,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </textField>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lock" translatesAutoresizingMaskIntoConstraints="NO" id="ahr-xj-JsJ">
-                                                <rect key="frame" x="6" y="17" width="30" height="30"/>
+                                                <rect key="frame" x="6" y="27" width="30" height="25"/>
                                                 <color key="tintColor" red="0.078431372550000003" green="0.1529411765" blue="0.37647058820000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="30" id="brb-Vg-rO8"/>
@@ -1416,16 +1415,15 @@
                                         </subviews>
                                         <constraints>
                                             <constraint firstAttribute="bottom" secondItem="3Mb-w1-S5N" secondAttribute="bottom" constant="3" id="0m9-57-kLM"/>
-                                            <constraint firstItem="3Mb-w1-S5N" firstAttribute="top" secondItem="WCg-3a-tnZ" secondAttribute="top" constant="14" id="1Fu-Bc-YQU"/>
+                                            <constraint firstItem="3Mb-w1-S5N" firstAttribute="top" secondItem="WCg-3a-tnZ" secondAttribute="top" id="1Fu-Bc-YQU"/>
                                             <constraint firstItem="3Mb-w1-S5N" firstAttribute="leading" secondItem="ahr-xj-JsJ" secondAttribute="trailing" constant="5" id="OIg-Tm-ONd"/>
                                             <constraint firstItem="ahr-xj-JsJ" firstAttribute="leading" secondItem="WCg-3a-tnZ" secondAttribute="leading" constant="6" id="TC2-mW-Xjo"/>
                                             <constraint firstAttribute="trailing" secondItem="3Mb-w1-S5N" secondAttribute="trailing" id="d72-6U-Vmg"/>
                                             <constraint firstAttribute="height" constant="67" id="j2V-tL-IJs"/>
-                                            <constraint firstItem="ahr-xj-JsJ" firstAttribute="top" secondItem="WCg-3a-tnZ" secondAttribute="top" constant="17" id="qJj-X0-Gde"/>
-                                            <constraint firstAttribute="bottom" secondItem="ahr-xj-JsJ" secondAttribute="bottom" constant="20" id="yYt-hX-0VC"/>
+                                            <constraint firstItem="ahr-xj-JsJ" firstAttribute="top" secondItem="WCg-3a-tnZ" secondAttribute="top" constant="27" id="qJj-X0-Gde"/>
                                         </constraints>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="98E-rR-aWE" customClass="ThemeColorButton" customModule="Simo_Vegetables" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="98E-rR-aWE" customClass="ThemeColorButton" customModule="Simo_Veg_Admin" customModuleProvider="target">
                                         <rect key="frame" x="52" y="369" width="273" height="40"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -1439,7 +1437,7 @@
                                             <action selector="OnSubmitPressed:" destination="xov-Fd-tWk" eventType="touchUpInside" id="3Fa-3P-o9V"/>
                                         </connections>
                                     </button>
-                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JXR-RC-Sus">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JXR-RC-Sus">
                                         <rect key="frame" x="155" y="317" width="200" height="34"/>
                                         <subviews>
                                             <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KYI-x3-S3V">
@@ -1521,7 +1519,7 @@
                                                     <constraint firstItem="V8g-GX-A2F" firstAttribute="centerX" secondItem="Bb7-XZ-SJy" secondAttribute="centerX" id="jM1-b8-XhE"/>
                                                 </constraints>
                                             </view>
-                                            <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xir-ap-G2M" customClass="RegularFontButton" customModule="Simo_Vegetables" customModuleProvider="target">
+                                            <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xir-ap-G2M" customClass="RegularFontButton" customModule="Simo_Veg_Admin" customModuleProvider="target">
                                                 <rect key="frame" x="43" y="103" width="247" height="31"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="31" id="eGK-zg-Fsg"/>
@@ -1532,7 +1530,7 @@
                                                         <fragment content="Don't have a Account? ">
                                                             <attributes>
                                                                 <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <font key="NSFont" metaFont="system" size="15"/>
+                                                                <font key="NSFont" metaFont="label" size="15"/>
                                                             </attributes>
                                                         </fragment>
                                                         <fragment content="SIgnUp Now!">
@@ -1551,7 +1549,7 @@
                                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Swc-R3-C2P">
                                                 <rect key="frame" x="1" y="69" width="333" height="20"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vvu-AB-TNk" customClass="RegularFontButton" customModule="Simo_Vegetables" customModuleProvider="target">
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vvu-AB-TNk" customClass="RegularFontButton" customModule="Simo_Veg_Admin" customModuleProvider="target">
                                                         <rect key="frame" x="152" y="11" width="29" height="19"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <fontDescription key="fontDescription" name="HindVadodara-Medium" family="Hind Vadodara" pointSize="14"/>

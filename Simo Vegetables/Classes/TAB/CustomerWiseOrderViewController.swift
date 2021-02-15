@@ -71,7 +71,7 @@ class CustomerWiseOrderViewController: ParentClass {
 
     }
     override func viewWillAppear(_ animated: Bool) {
-        apiCallingFuncation(strDate: Date.yesterday.convertToDateString)
+        apiCallingFuncation(strDate: buttonDate.txtField.text!)
     }
     //––––––––––––––––––––––––––––––––––––––––
     //MARK: - API Function
@@ -147,7 +147,9 @@ extension CustomerWiseOrderViewController: LUExpandableTableViewDataSource {
         cell.backgroundColor = .systemGray6
 
         let dic = orderDetails[indexPath.section].items[indexPath.row]
-        cell.btnqunty.setTitle("Qty : \(dic.quantity ?? "0")", for: .normal)
+//        cell.btnqunty.setTitle("Qty : \(dic.quantity ?? "0")", for: .normal)
+        cell.btnqunty.setTitle("Qty : \(dic.quantity ?? "0") \(dic.unit ?? "")", for: .normal)
+
         cell.lblFieldName.text = dic.productName
         cell.lblSubFieldName.text = "\(dic.salePrice ?? "") RS / 1 \(dic.unit ?? "")"
         cell.lblSubFieldTotal.text = "Subtotal : \(dic.totalSalePrice ?? "")"
@@ -183,7 +185,7 @@ extension CustomerWiseOrderViewController: LUExpandableTableViewDelegate {
 
     func expandableTableView(_ expandableTableView: LUExpandableTableView, heightForHeaderInSection section: Int) -> CGFloat {
         /// Returning `UITableViewAutomaticDimension` value on iOS 9 will cause reloading all cells due to an iOS 9 bug with automatic dimensions
-        return 117.0
+        return 100.0
     }
 
     // MARK: - Optional

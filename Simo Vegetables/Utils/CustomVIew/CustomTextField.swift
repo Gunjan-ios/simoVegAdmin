@@ -11,19 +11,17 @@ import UIKit
 import TextFieldEffects
 
 
-class MyTextfiled: MadokaTextField {
+class MyTextfiled: AkiraTextField {
     
     override func awakeFromNib(){
-        borderColor = UIColor .black
+        borderStyle  = .none
         textColor = UIColor.black
         placeholderColor = UIColor .gray
-        placeholderFontScale = 1
+        placeholderFontScale = 0.9
         self.font = UIFont(name: APP_FONT_NAME, size: NAV_HEADER_FONT_SIZE)
-
     }
-    
-    
 }
+
 class CountryTextfiled: MadokaTextField {
     
     let padding: CGFloat =  8

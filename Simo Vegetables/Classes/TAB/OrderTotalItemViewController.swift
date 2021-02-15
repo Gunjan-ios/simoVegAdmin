@@ -66,7 +66,7 @@ class OrderTotalItemViewController:  ParentClass  ,UITableViewDelegate,UITableVi
         //        initscrollview()
     }
     override func viewWillAppear(_ animated: Bool) {
-        apiCallingFuncation(strDate: Date.yesterday.convertToDateString)
+        apiCallingFuncation(strDate: buttonDate.txtField.text!)
     }
     func getSelectDate(date : String){
         apiCallingFuncation(strDate: date)
@@ -100,7 +100,8 @@ class OrderTotalItemViewController:  ParentClass  ,UITableViewDelegate,UITableVi
             cell.backgroundColor = UIColor.clear
 
             let dic = placeorderDetails[indexPath.row]
-            cell.btnqunty.setTitle("Qty : \(dic.totalOrderedQuantity ?? "0")", for: .normal)
+//            cell.btnqunty.setTitle("Qty : \(dic.totalOrderedQuantity ?? "0")", for: .normal)
+            cell.btnqunty.setTitle("Qty : \(dic.totalOrderedQuantity ?? "0") \(dic.unit ?? "")", for: .normal)
             cell.lblFieldName.text = dic.productName
             cell.lblSubFieldName.text = "\(dic.salePrice ?? "") RS / 1 \(dic.unit ?? "")"
             cell.lblSubFieldTotal.isHidden = true
@@ -124,6 +125,7 @@ class OrderTotalItemViewController:  ParentClass  ,UITableViewDelegate,UITableVi
                     self.placeorderDetails.append(value)
                 }
                 if self.tblconfirmOrderList != nil{
+                    self.tblconfirmOrderList.isHidden = false
                     self.tblconfirmOrderList.reloadData()
                 }else{
                     self.initConfirmOrderTableview()

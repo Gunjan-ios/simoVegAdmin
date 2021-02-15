@@ -22,7 +22,7 @@ class CustomInputTextField: UIView, UITextFieldDelegate {
     
     func initDesign(pText:String,pImageName:String,pTag:Int,pPlaceHolder:String) {
         
-        let imgView = UIImageView (frame: CGRect (x: 0, y: 5, width: labelHeight, height: labelHeight))
+        let imgView = UIImageView (frame: CGRect (x: 0, y: 30, width: labelHeight, height: labelHeight))
         imgView.image = UIImage (named: pImageName)
         imgView.setImageColor(color: colorPrimary)
         self.addSubview(imgView)

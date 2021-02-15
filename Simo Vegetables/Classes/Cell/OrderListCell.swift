@@ -79,8 +79,10 @@ class OrderListCell : UITableViewCell {
         yPosition +=  Int(lblFieldName.bounds.height)
 
 
-        self.lblSubFieldName.frame = CGRect(x: xPosition, y:yPosition , width: SCREEN_WIDTH - xPosition - 100 , height: CELL_LABEL_HEIGHT)
-        self.btnqunty.frame = CGRect (x: SCREEN_WIDTH - X_PADDING -  110 , y: yPosition , width: 90, height: CELL_LABEL_HEIGHT)
+//        self.lblSubFieldName.frame = CGRect(x: xPosition, y:yPosition , width: SCREEN_WIDTH - xPosition - 100 , height: CELL_LABEL_HEIGHT)
+//        self.btnqunty.frame = CGRect (x: SCREEN_WIDTH - X_PADDING -  110 , y: yPosition , width: 90, height: CELL_LABEL_HEIGHT)
+        self.lblSubFieldName.frame = CGRect(x: xPosition, y:yPosition , width: Int(subView.frame.width)/2 - xPosition , height: CELL_LABEL_HEIGHT)
+        self.btnqunty.frame = CGRect (x: SCREEN_WIDTH  -  Int(subView.frame.width)/2 , y: yPosition , width: Int(subView.frame.width)/2, height: CELL_LABEL_HEIGHT)
 
         yPosition +=  Int(btnqunty.bounds.height)
 
@@ -117,7 +119,7 @@ class totalOrderListCell : UITableViewCell {
 
     var btnqunty : UIButton = {
         let btn = UIButton(type: .custom)
-        btn.contentHorizontalAlignment = .center
+        btn.contentHorizontalAlignment = .right
         btn.titleLabel?.font = UIFont (name: APP_FONT_NAME_BOLD, size: 15)
         btn.setTitleColor(.black, for: .normal)
         return btn
@@ -181,14 +183,13 @@ class totalOrderListCell : UITableViewCell {
         var yPosition = 0
 
         self.lblFieldName.frame = CGRect(x: xPosition, y: yPosition, width: SCREEN_WIDTH - xPosition , height: CELL_LABEL_HEIGHT)
+
         yPosition +=  Int(lblFieldName.bounds.height)
 
-
-        self.lblSubFieldName.frame = CGRect(x: xPosition, y:yPosition , width: SCREEN_WIDTH - xPosition - 100 , height: CELL_LABEL_HEIGHT)
-        self.btnqunty.frame = CGRect (x: SCREEN_WIDTH - X_PADDING -  100 , y: yPosition , width: 90, height: CELL_LABEL_HEIGHT)
+        self.lblSubFieldName.frame = CGRect(x: xPosition, y:yPosition , width: Int(subView.frame.width)/2 - xPosition  , height: CELL_LABEL_HEIGHT)
+        self.btnqunty.frame = CGRect (x:  Int(subView.frame.width)/2  , y: yPosition , width:  Int(subView.frame.width)/2 - Y_PADDING, height: CELL_LABEL_HEIGHT)
 
         yPosition +=  Int(btnqunty.bounds.height)
-
 
         self.lblSubFieldTotal.frame = CGRect(x: xPosition, y:yPosition , width: SCREEN_WIDTH - xPosition , height: CELL_LABEL_HEIGHT)
 

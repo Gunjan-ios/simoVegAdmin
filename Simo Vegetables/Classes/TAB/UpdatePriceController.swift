@@ -95,8 +95,11 @@ class UpdatePriceController: ParentClass  ,UITableViewDelegate,UITableViewDataSo
     func getTableData(){
         for i in 0..<tblList.numberOfRows(inSection: 0) { //tbl--> your table name
             let dic = orderDetails[i]
-            let cell = tblList.cellForRow(at: IndexPath(row: i, section: 0)) as! PlaceOrderTableViewCell
-            let set = "\(cell.txtbuyquanty.text ?? "")|\(cell.txtsellquanty.text ?? "")"
+            let cell = tblList.cellForRow(at: IndexPath(row: i, section: 0)) as? PlaceOrderTableViewCell
+            if cell == nil{
+                return;
+            }
+            let set = "\(cell!.txtbuyquanty.text ?? "")|\(cell!.txtsellquanty.text ?? "")"
             paramQuntity.setValue(set, forKey: dic.productId)
         }
         strOrder = Utils.stringFromJson(obj: paramQuntity as! [String : Any])
@@ -274,7 +277,9 @@ class UpdatePriceController: ParentClass  ,UITableViewDelegate,UITableViewDataSo
             cell.backgroundColor = UIColor.clear
 
             let dic = placeorderDetails[indexPath.row]
-            cell.btnqunty.setTitle("Qty : \(dic.myOrder ?? "0")", for: .normal)
+//            cell.btnqunty.setTitle("Qty : \(dic.myOrder ?? "0")", for: .normal)
+            cell.btnqunty.setTitle("Qty : \(dic.myOrder ?? "0") \(dic.unit ?? "")", for: .normal)
+
             cell.lblFieldName.text = dic.productName
 
             cell.imgItem.sd_setImage(with: URL (string: dic.image!), placeholderImage: nil, options: .progressiveLoad)

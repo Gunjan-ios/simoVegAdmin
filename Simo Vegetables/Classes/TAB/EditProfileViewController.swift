@@ -9,6 +9,8 @@
 import UIKit
 import SDWebImage
 import IPImage
+import MaterialComponents
+
 class EditProfileViewController: ParentClass,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
     
     fileprivate var headerview:UIView!
@@ -19,6 +21,7 @@ class EditProfileViewController: ParentClass,UIImagePickerControllerDelegate,UIN
     fileprivate var txtLast : CustomInputTextField!
     fileprivate var txtEmail : CustomInputTextField!
     fileprivate var txtMobile : CustomInputTextField!
+    fileprivate var txtPassword : CustomInputTextField!
     fileprivate var btnSubmit : ThemeColorButton!
     fileprivate var  imgProfile : UIImageView!
     var param : [String:Any] =  [String:Any]()
@@ -65,7 +68,7 @@ class EditProfileViewController: ParentClass,UIImagePickerControllerDelegate,UIN
         scrlView.backgroundColor = .white
         self.view.addSubview(scrlView)
         
-        var yInternalSpace = YTEXTFILED_PADDING
+        var yInternalSpace = X_PADDING
 //
 //        imgProfile = UIImageView (frame: CGRect (x: X_PADDING, y: yInternalSpace, width: controls_height, height: controls_height))
 //        imgProfile.sd_setImage(with:URL (string:userDic.profilePic!) , placeholderImage: UIImage(named: "gallery"), options: .progressiveLoad, completed: nil)
@@ -105,28 +108,30 @@ class EditProfileViewController: ParentClass,UIImagePickerControllerDelegate,UIN
 //        scrlView.addSubview(txtFirst)
 
         txtFirst = CustomInputTextField (frame: CGRect (x: X_PADDING, y: yInternalSpace, width: SCREEN_WIDTH - X_PADDING*2, height: NEXT_BUTTON_HEIGHT))
-        txtFirst.initDesign(pText: self.userDic.firstName, pImageName: "profile", pTag: 1, pPlaceHolder: "Please enter first name")
+//        txtFirst.placeholder = "Name"
+//        txtFirst.InitDesign(pImageName: "profile", PInfoText: "", pPlaceHolder: "Name")
+        txtFirst.initDesign(pText: "", pImageName: "profile", pTag: 1, pPlaceHolder: "Name")
         scrlView.addSubview(txtFirst)
         
-        yInternalSpace +=  Int(txtFirst.bounds.height) + YTEXTFILED_PADDING
-
-        txtLast = CustomInputTextField (frame: CGRect (x: X_PADDING, y: yInternalSpace, width: SCREEN_WIDTH - X_PADDING*2, height: NEXT_BUTTON_HEIGHT))
-        txtLast.initDesign(pText: self.userDic.lastName, pImageName: "profile", pTag: 2, pPlaceHolder: "Please enter last name")
-        scrlView.addSubview(txtLast)
-
-        yInternalSpace +=  Int(txtLast.bounds.height) + YTEXTFILED_PADDING
+        yInternalSpace +=  Int(txtFirst.bounds.height) + Y_PADDING
 
         txtEmail = CustomInputTextField (frame: CGRect (x: X_PADDING, y: yInternalSpace, width: SCREEN_WIDTH - X_PADDING*2, height: NEXT_BUTTON_HEIGHT))
-        txtEmail.initDesign(pText: self.userDic.email, pImageName: "message", pTag: 3, pPlaceHolder: "Please enter email address")
+        txtEmail.initDesign(pText: "", pImageName: "message", pTag: 3, pPlaceHolder: "Email-ID")
         scrlView.addSubview(txtEmail)
-        
-        yInternalSpace +=  Int(txtEmail.bounds.height) + YTEXTFILED_PADDING
+
+        yInternalSpace +=  Int(txtEmail.bounds.height) + Y_PADDING
 
         txtMobile = CustomInputTextField (frame: CGRect (x: X_PADDING, y: yInternalSpace, width: SCREEN_WIDTH - X_PADDING*2, height: NEXT_BUTTON_HEIGHT))
-        txtMobile.initDesign(pText: self.userDic.mobile, pImageName: "phone", pTag: 4, pPlaceHolder: "Please enter mobile")
+        txtMobile.initDesign(pText: "", pImageName: "phone", pTag: 4, pPlaceHolder: "Mobile")
         scrlView.addSubview(txtMobile)
-        
-        yInternalSpace +=  Int(txtMobile.bounds.height) + YTEXTFILED_PADDING
+
+        yInternalSpace +=  Int(txtMobile.bounds.height) + Y_PADDING
+
+        txtPassword = CustomInputTextField (frame: CGRect (x: X_PADDING, y: yInternalSpace, width: SCREEN_WIDTH - X_PADDING*2, height: NEXT_BUTTON_HEIGHT))
+        txtPassword.initDesign(pText: "", pImageName: "lock", pTag: 5, pPlaceHolder: "Password")
+        scrlView.addSubview(txtPassword)
+
+        yInternalSpace +=  Int(txtPassword.bounds.height) + YTEXTFILED_PADDING
         
         btnSubmit = ThemeColorButton (frame: CGRect(x:0 , y: yInternalSpace, width: Int(SCREEN_WIDTH/3), height: CUSTOM_BUTTON_HEIGHT))
         btnSubmit.center = CGPoint (x: self.view.center.x , y: btnSubmit.center.y)
