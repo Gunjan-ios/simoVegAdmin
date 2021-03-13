@@ -13,7 +13,7 @@ import CountryPickerView
 //import GoogleSignIn
 //import FBSDKCoreKit
 //import FBSDKLoginKit
-
+import MaterialComponents
 
 class LoginVC: ParentClass ,UITextFieldDelegate,CountryPickerViewDelegate, CountryPickerViewDataSource {
     func countryPickerView(_ countryPickerView: CountryPickerView, didSelectCountry country: Country) {
@@ -25,9 +25,9 @@ class LoginVC: ParentClass ,UITextFieldDelegate,CountryPickerViewDelegate, Count
     // MARK: IB Outlets
     // ----------------------------------------------------------
    
-    @IBOutlet weak var txt_User: MyTextfiled!
+    @IBOutlet weak var txt_User: MDCOutlinedTextField!
     @IBOutlet weak var txt_CountryCode: CountryTextfiled!
-    @IBOutlet weak var txt_Password: MyTextfiled!
+    @IBOutlet weak var txt_Password: MDCOutlinedTextField!
     @IBOutlet weak var btn_Login: UIButton!
     @IBOutlet weak var btn_check: UIButton!
     @IBOutlet weak var LNbutton: UIBarButtonItem!
@@ -38,9 +38,7 @@ class LoginVC: ParentClass ,UITextFieldDelegate,CountryPickerViewDelegate, Count
     @IBOutlet weak var imgMobile: UIImageView!
     @IBOutlet weak var imgPassword: UIImageView!
 
-
     @IBOutlet weak var btn_signup: ThemeColorButton!
-    
     @IBOutlet weak var view1: UIView!
     
     @IBOutlet weak var countryView: UIView!
@@ -56,23 +54,19 @@ class LoginVC: ParentClass ,UITextFieldDelegate,CountryPickerViewDelegate, Count
     // ----------------------------------------------------------
     override func viewDidLoad() {
         super.viewDidLoad()
-//        Hud.showLoading(title: "Please wait")
-        imgMobile.setImageColor(color: colorPrimary)
-        imgPassword.setImageColor(color: colorPrimary)
+
+        txt_User.InitDesign(pImageName: "message", PInfoText: "Mobile", pPlaceHolder: "Mobile Number")
+        txt_Password.InitDesign(pImageName: "lock", PInfoText: "Password", pPlaceHolder: "Password")
         self.navigationController?.navigationBar.barTintColor = THEME_COLOR
 
         self.btn_Login.layer.cornerRadius = self.btn_Login.frame.size.height/2
-
         txt_User.delegate = self
         txt_Password.delegate = self
-        MadokaTextField.appearance().tintColor = .white
         txt_User.text = "9016493160"
         txt_Password.text = "admin@123"
 //        setupCountryPicker()
         UDID =  KeychainManager() .getDeviceIdentifierFromKeychain()
-        print(UDID)
-//        28381D03-B91F-4FE7-A3A6-EAE8AF2F2E53
-//        28381D03-B91F-4FE7-A3A6-EAE8AF2F2E53
+        print(UDID as Any)
         self.view.backgroundColor = .white
         // Do any additional setup after loading the view.
     }

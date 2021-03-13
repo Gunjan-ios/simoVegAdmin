@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ADc-qo-pqM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ADc-qo-pqM">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -31,8 +33,8 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -62,7 +64,7 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Tp-ff-dQx">
                                 <rect key="frame" x="0.0" y="94" width="414" height="802"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MQv-gS-L96" customClass="ThemeColorButton" customModule="Simo_Veg_Admin" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MQv-gS-L96" customClass="ThemeColorButton" customModule="Simo_Veg_Admin" customModuleProvider="target">
                                         <rect key="frame" x="299" y="430" width="100" height="40"/>
                                         <color key="backgroundColor" red="0.83529411760000005" green="0.31372549020000001" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -117,7 +119,7 @@
                                         <color key="textColor" red="0.078431372550000003" green="0.1529411765" blue="0.37647058820000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="USk-ML-NPg">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="USk-ML-NPg">
                                         <rect key="frame" x="15" y="430" width="130" height="40"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -182,6 +184,7 @@
                                 <blurEffect style="dark"/>
                             </visualEffectView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="fVm-41-oWV"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="OiY-dk-54e" firstAttribute="top" secondItem="fVm-41-oWV" secondAttribute="top" constant="8" id="271-E9-zIJ"/>
@@ -199,7 +202,6 @@
                             <constraint firstItem="OiY-dk-54e" firstAttribute="leading" secondItem="fVm-41-oWV" secondAttribute="leading" constant="16" id="sqS-d8-xnW"/>
                             <constraint firstItem="s1J-aQ-t7i" firstAttribute="trailing" secondItem="fVm-41-oWV" secondAttribute="trailing" id="t3T-uJ-VxI"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="fVm-41-oWV"/>
                     </view>
                     <navigationItem key="navigationItem" title="Forgot Password" id="cKq-7R-8Hx"/>
                     <connections>
@@ -249,7 +251,7 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4n1-wS-ByD">
                                 <rect key="frame" x="0.0" y="94" width="414" height="802"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bhk-mi-GbO" customClass="ThemeColorButton" customModule="Simo_Veg_Admin" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bhk-mi-GbO" customClass="ThemeColorButton" customModule="Simo_Veg_Admin" customModuleProvider="target">
                                         <rect key="frame" x="60" y="354.5" width="294" height="40"/>
                                         <color key="backgroundColor" red="0.83529411760000005" green="0.31372549020000001" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -415,6 +417,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="n7a-9J-NIQ"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="aWM-k6-lJa" firstAttribute="top" secondItem="CiP-y5-CwX" secondAttribute="top" id="4kS-ZM-OUL"/>
@@ -432,7 +435,6 @@
                             <constraint firstItem="3L6-QC-3b8" firstAttribute="leading" secondItem="n7a-9J-NIQ" secondAttribute="leading" constant="16" id="sTm-w2-PLj"/>
                             <constraint firstItem="4n1-wS-ByD" firstAttribute="top" secondItem="n7a-9J-NIQ" secondAttribute="top" constant="50" id="uWD-6n-LKW"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="n7a-9J-NIQ"/>
                     </view>
                     <navigationItem key="navigationItem" title="Forgot Password" id="mJC-SI-n8J"/>
                     <connections>
@@ -783,7 +785,7 @@
                                             <action selector="OnTCPressed:" destination="lY7-78-wTx" eventType="touchUpInside" id="i3T-qB-3Gr"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bBQ-9e-Vuk" customClass="ThemeColorButton" customModule="Simo_Veg_Admin" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bBQ-9e-Vuk" customClass="ThemeColorButton" customModule="Simo_Veg_Admin" customModuleProvider="target">
                                         <rect key="frame" x="105" y="630" width="183" height="40"/>
                                         <color key="backgroundColor" red="0.83529411760000005" green="0.31372549020000001" blue="0.2784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -797,7 +799,7 @@
                                             <action selector="OnSubmitPressed:" destination="lY7-78-wTx" eventType="touchUpInside" id="PVW-wT-ZyT"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="srT-AE-boq" customClass="RegularFontButton" customModule="Simo_Veg_Admin" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="srT-AE-boq" customClass="RegularFontButton" customModule="Simo_Veg_Admin" customModuleProvider="target">
                                         <rect key="frame" x="24" y="694" width="329" height="31"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="31" id="XDl-ze-Bk8"/>
@@ -949,6 +951,7 @@
                                 <blurEffect style="dark"/>
                             </visualEffectView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="B6q-J9-Bv1"/>
                         <color key="backgroundColor" red="0.078431372550000003" green="0.1529411765" blue="0.37647058820000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Qt0-ja-712" firstAttribute="bottom" secondItem="OKt-Uo-MSB" secondAttribute="bottom" id="4FS-zF-S2k"/>
@@ -966,7 +969,6 @@
                             <constraint firstItem="T8P-5A-MuC" firstAttribute="top" secondItem="B6q-J9-Bv1" secondAttribute="top" constant="8" id="phY-Iv-Gm7"/>
                             <constraint firstItem="n3E-oi-skE" firstAttribute="top" secondItem="OKt-Uo-MSB" secondAttribute="top" id="vkk-tM-bjj"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="B6q-J9-Bv1"/>
                     </view>
                     <navigationItem key="navigationItem" title="Sign Up" id="OU6-Qi-iL0"/>
                     <size key="freeformSize" width="375" height="1000"/>
@@ -1234,6 +1236,7 @@
                                 <blurEffect style="dark"/>
                             </visualEffectView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="d38-OB-57I"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="0W5-sH-mtH" firstAttribute="leading" secondItem="d38-OB-57I" secondAttribute="leading" id="Eox-pY-9a5"/>
@@ -1251,7 +1254,6 @@
                             <constraint firstItem="Qiz-V4-k8T" firstAttribute="top" secondItem="d38-OB-57I" secondAttribute="top" constant="8" id="vEf-aO-gUN"/>
                             <constraint firstItem="0W5-sH-mtH" firstAttribute="trailing" secondItem="d38-OB-57I" secondAttribute="trailing" id="va1-ND-vff"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="d38-OB-57I"/>
                     </view>
                     <navigationItem key="navigationItem" title="Forgot Password" id="Ly8-hd-j03"/>
                     <connections>
@@ -1342,8 +1344,8 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jbW-rt-RWj">
                                         <rect key="frame" x="20" y="170" width="335" height="67"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Mobile number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Iwo-AG-tC0" customClass="MyTextfiled" customModule="Simo_Veg_Admin" customModuleProvider="target">
-                                                <rect key="frame" x="41" y="0.0" width="294" height="67"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Mobile number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Iwo-AG-tC0" customClass="MDCOutlinedTextField">
+                                                <rect key="frame" x="11" y="0.0" width="312" height="67"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="67" id="r3F-Am-eZt"/>
                                                 </constraints>
@@ -1361,17 +1363,17 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </textField>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="message" translatesAutoresizingMaskIntoConstraints="NO" id="aCB-js-Ywv">
-                                                <rect key="frame" x="6" y="28" width="30" height="30"/>
+                                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="message" translatesAutoresizingMaskIntoConstraints="NO" id="aCB-js-Ywv">
+                                                <rect key="frame" x="6" y="28" width="0.0" height="30"/>
                                                 <color key="tintColor" red="0.078431372550000003" green="0.1529411765" blue="0.37647058820000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="30" id="YAp-j0-ktd"/>
+                                                    <constraint firstAttribute="width" id="YAp-j0-ktd"/>
                                                     <constraint firstAttribute="height" constant="30" id="nEJ-H1-Kq7"/>
                                                 </constraints>
                                             </imageView>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="Iwo-AG-tC0" secondAttribute="trailing" id="AKr-ea-HDt"/>
+                                            <constraint firstAttribute="trailing" secondItem="Iwo-AG-tC0" secondAttribute="trailing" constant="12" id="AKr-ea-HDt"/>
                                             <constraint firstItem="aCB-js-Ywv" firstAttribute="leading" secondItem="jbW-rt-RWj" secondAttribute="leading" constant="6" id="BNA-3q-Eil"/>
                                             <constraint firstItem="Iwo-AG-tC0" firstAttribute="leading" secondItem="aCB-js-Ywv" secondAttribute="trailing" constant="5" id="NxT-jQ-yu2"/>
                                             <constraint firstItem="Iwo-AG-tC0" firstAttribute="top" secondItem="jbW-rt-RWj" secondAttribute="top" id="kl2-6g-1ST"/>
@@ -1389,8 +1391,8 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WCg-3a-tnZ">
                                         <rect key="frame" x="20" y="245" width="335" height="67"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Mb-w1-S5N" customClass="MyTextfiled" customModule="Simo_Veg_Admin" customModuleProvider="target">
-                                                <rect key="frame" x="41" y="0.0" width="294" height="64"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Mb-w1-S5N" customClass="MDCOutlinedTextField">
+                                                <rect key="frame" x="11" y="0.0" width="312" height="64"/>
                                                 <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits" returnKeyType="go" secureTextEntry="YES"/>
                                                 <userDefinedRuntimeAttributes>
@@ -1405,11 +1407,11 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </textField>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lock" translatesAutoresizingMaskIntoConstraints="NO" id="ahr-xj-JsJ">
-                                                <rect key="frame" x="6" y="27" width="30" height="25"/>
+                                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lock" translatesAutoresizingMaskIntoConstraints="NO" id="ahr-xj-JsJ">
+                                                <rect key="frame" x="6" y="27" width="0.0" height="25"/>
                                                 <color key="tintColor" red="0.078431372550000003" green="0.1529411765" blue="0.37647058820000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="30" id="brb-Vg-rO8"/>
+                                                    <constraint firstAttribute="width" id="brb-Vg-rO8"/>
                                                 </constraints>
                                             </imageView>
                                         </subviews>
@@ -1418,7 +1420,7 @@
                                             <constraint firstItem="3Mb-w1-S5N" firstAttribute="top" secondItem="WCg-3a-tnZ" secondAttribute="top" id="1Fu-Bc-YQU"/>
                                             <constraint firstItem="3Mb-w1-S5N" firstAttribute="leading" secondItem="ahr-xj-JsJ" secondAttribute="trailing" constant="5" id="OIg-Tm-ONd"/>
                                             <constraint firstItem="ahr-xj-JsJ" firstAttribute="leading" secondItem="WCg-3a-tnZ" secondAttribute="leading" constant="6" id="TC2-mW-Xjo"/>
-                                            <constraint firstAttribute="trailing" secondItem="3Mb-w1-S5N" secondAttribute="trailing" id="d72-6U-Vmg"/>
+                                            <constraint firstAttribute="trailing" secondItem="3Mb-w1-S5N" secondAttribute="trailing" constant="12" id="d72-6U-Vmg"/>
                                             <constraint firstAttribute="height" constant="67" id="j2V-tL-IJs"/>
                                             <constraint firstItem="ahr-xj-JsJ" firstAttribute="top" secondItem="WCg-3a-tnZ" secondAttribute="top" constant="27" id="qJj-X0-Gde"/>
                                         </constraints>
@@ -1443,7 +1445,7 @@
                                             <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KYI-x3-S3V">
                                                 <rect key="frame" x="10" y="8" width="25" height="25"/>
                                             </imageView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Gu-lK-f79">
+                                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="system" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Gu-lK-f79">
                                                 <rect key="frame" x="35" y="4.5" width="157" height="32"/>
                                                 <fontDescription key="fontDescription" name="HindVadodara-Regular" family="Hind Vadodara" pointSize="17"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1519,7 +1521,7 @@
                                                     <constraint firstItem="V8g-GX-A2F" firstAttribute="centerX" secondItem="Bb7-XZ-SJy" secondAttribute="centerX" id="jM1-b8-XhE"/>
                                                 </constraints>
                                             </view>
-                                            <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xir-ap-G2M" customClass="RegularFontButton" customModule="Simo_Veg_Admin" customModuleProvider="target">
+                                            <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xir-ap-G2M" customClass="RegularFontButton" customModule="Simo_Veg_Admin" customModuleProvider="target">
                                                 <rect key="frame" x="43" y="103" width="247" height="31"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="31" id="eGK-zg-Fsg"/>
@@ -1549,7 +1551,7 @@
                                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Swc-R3-C2P">
                                                 <rect key="frame" x="1" y="69" width="333" height="20"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vvu-AB-TNk" customClass="RegularFontButton" customModule="Simo_Veg_Admin" customModuleProvider="target">
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vvu-AB-TNk" customClass="RegularFontButton" customModule="Simo_Veg_Admin" customModuleProvider="target">
                                                         <rect key="frame" x="152" y="11" width="29" height="19"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <fontDescription key="fontDescription" name="HindVadodara-Medium" family="Hind Vadodara" pointSize="14"/>
@@ -1625,6 +1627,7 @@
                                 </constraints>
                             </scrollView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="AHX-fT-y9G"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="uyJ-Xg-QUw" firstAttribute="bottom" secondItem="fyg-nQ-22D" secondAttribute="bottom" id="2Ge-HW-OAV"/>
@@ -1641,7 +1644,6 @@
                             <constraint firstItem="uyJ-Xg-QUw" firstAttribute="leading" secondItem="fyg-nQ-22D" secondAttribute="leading" id="wMF-Ba-vl1"/>
                             <constraint firstItem="DUT-67-HHe" firstAttribute="trailing" secondItem="AHX-fT-y9G" secondAttribute="trailing" id="zwo-ub-r4y"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="AHX-fT-y9G"/>
                     </view>
                     <navigationItem key="navigationItem" title="Login" id="n0J-im-Rb7">
                         <barButtonItem key="rightBarButtonItem" systemItem="compose" id="845-yh-BAr">
@@ -1671,6 +1673,50 @@
             <point key="canvasLocation" x="-3941.3043478260875" y="480.80357142857139"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="2DN-5L-3EL">
+            <size key="intrinsicContentSize" width="139" height="21"/>
+        </designable>
+        <designable name="3oc-iO-sZA">
+            <size key="intrinsicContentSize" width="102.5" height="19.5"/>
+        </designable>
+        <designable name="4zc-6a-f7A">
+            <size key="intrinsicContentSize" width="159.5" height="18"/>
+        </designable>
+        <designable name="8BS-bZ-Ohd">
+            <size key="intrinsicContentSize" width="21" height="21.5"/>
+        </designable>
+        <designable name="Dbo-N6-MLU">
+            <size key="intrinsicContentSize" width="62.5" height="21"/>
+        </designable>
+        <designable name="JW3-Bd-jLe">
+            <size key="intrinsicContentSize" width="21" height="22"/>
+        </designable>
+        <designable name="L14-Nc-FfN">
+            <size key="intrinsicContentSize" width="73.5" height="21"/>
+        </designable>
+        <designable name="NnM-Hv-blU">
+            <size key="intrinsicContentSize" width="82.5" height="22"/>
+        </designable>
+        <designable name="PQV-i8-gJv">
+            <size key="intrinsicContentSize" width="81.5" height="22"/>
+        </designable>
+        <designable name="W0E-Rb-220">
+            <size key="intrinsicContentSize" width="41" height="22"/>
+        </designable>
+        <designable name="dpb-JR-0FK">
+            <size key="intrinsicContentSize" width="114.5" height="20"/>
+        </designable>
+        <designable name="hsi-E2-LpF">
+            <size key="intrinsicContentSize" width="117" height="22"/>
+        </designable>
+        <designable name="rh7-ZY-orj">
+            <size key="intrinsicContentSize" width="21" height="22"/>
+        </designable>
+        <designable name="vyX-WL-4OR">
+            <size key="intrinsicContentSize" width="94" height="18"/>
+        </designable>
+    </designables>
     <inferredMetricsTieBreakers>
         <segue reference="Xc7-4O-cNp"/>
     </inferredMetricsTieBreakers>
@@ -1685,5 +1731,8 @@
         <image name="profile" width="25" height="25"/>
         <image name="selectedCheckbox" width="24" height="24"/>
         <image name="selectedCheckboxBlue" width="24" height="24"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

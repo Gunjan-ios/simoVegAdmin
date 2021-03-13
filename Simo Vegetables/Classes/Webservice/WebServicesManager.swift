@@ -11,8 +11,12 @@ import Alamofire
 import SwiftyJSON
 
 let apiId = "YzMxYjMyMzY0Y2UxOWNhOGZjZDE1MGE0MTdlY2NlNTg="
-let BASE_URL = "https://digitalfriend.co.in/simo_vegetables/api/services/"
-let BASE_Admin_URL = "https://digitalfriend.co.in/simo_vegetables/api/"
+//let FINAL_URL = "https://digitalfriend.co.in/simo_vegetables/api/"
+
+let FINAL_URL = "https://simovegetable.com/api/"
+
+let BASE_Admin_URL = "\(FINAL_URL)"
+let BASE_URL = "\(FINAL_URL)services/"
 
 let ItunesUrl = "https://apps.apple.com/us/app/connflix/id1546423387"
 
@@ -32,7 +36,7 @@ let PRODUCTLIST_URL = "product/list"
 let ORDERLIST_URL = "order/list"
 let UPDATEPRICE_URL = "product/update_price"
 let GENERAL_URL = "general"
-
+let PRICE_STATUS = "product/change_price_status"
 
 
 class WebServicesManager {
@@ -321,6 +325,32 @@ class WebServicesManager {
             onCompletion!(json)
         }
     }
+
+    class func priceEnableAPI(status:Int,view:UIView, onCompletion: ((JSON?) -> Void)? = nil, onError: ((Error?) -> Void)? = nil) {
+
+        Hud.showLoading(title: CS.Common.waiting, view: view)
+        let parameters: Parameters = [
+            CS.Params.checked : status
+        ]
+
+        let strUrl = "\(BASE_URL)\(PRICE_STATUS)"
+        print("Request :- \(strUrl)")
+        Alamofire.request(strUrl, method: .post, parameters:parameters,encoding: JSONEncoding.prettyPrinted).responseJSON { (response) in
+              Hud.hideLoading(view: view)
+            guard let value = response.result.value
+            else {
+                if let err = response.error{
+                    onError?(err)
+                    return
+                }
+                return }
+
+            let json = JSON(value)
+            print(json)
+            onCompletion!(json)
+        }
+    }
+
     class func productList(ordered_products:Int,search:String,view:UIView ,date:String, onCompletion: ((JSON?) -> Void)? = nil, onError: ((Error?) -> Void)? = nil) {
 
         Hud.showLoading(title: CS.Common.waiting, view: view)

@@ -18,6 +18,8 @@ class UpdatePriceController: ParentClass  ,UITableViewDelegate,UITableViewDataSo
     fileprivate var topView : UIView!
     fileprivate var buttonPlaceOrder: CustomButton!
 
+    fileprivate var swtchEnble : UISwitch!
+
     fileprivate var tblList: UITableView!
 //    fileprivate var tblconfirmOrderList: UITableView!
 
@@ -69,16 +71,17 @@ class UpdatePriceController: ParentClass  ,UITableViewDelegate,UITableViewDataSo
         }else{
             bottmheightAdjust = 50
         }
+        let lbl = CustomLabel (frame: CGRect (x: 70, y: SCREEN_HEIGHT  - bottmheightAdjust - tabHeight - 4, width: SCREEN_WIDTH - X_PADDING*2 - 70 , height: 40))
+        lbl.text = "Price enble ?"
+        lbl.font = UIFont (name: APP_FONT_NAME_BOLD, size: NAV_HEADER_FONT_SIZE)
+        lbl.textColor = .black
+        self.view.addSubview(lbl)
 
-//        mainConfimVIew = UIView (frame: CGRect(x: 0, y: yPosition, width: SCREEN_WIDTH, height: SCREEN_HEIGHT - yPosition - tabHeight  - ParentClass.sharedInstance.iPhone_X_Bottom_Padding))
-//        //        mainConfimVIew.frame = self.view.frame
-//        mainConfimVIew.backgroundColor = .white
-//        self.view.addSubview(mainConfimVIew)
-//        mainConfimVIew.isHidden = true
+        swtchEnble = UISwitch(frame: CGRect(x:  X_PADDING , y: SCREEN_HEIGHT  - bottmheightAdjust - tabHeight , width: 70, height: 40))
+        swtchEnble.addTarget(self, action: #selector(priceEnableAPICallingFuncation(sender:)), for: .valueChanged)
+        self.view.addSubview(swtchEnble)
 
-//        mainView = UIView (frame: CGRect(x: 0, y: yPosition, width: SCREEN_WIDTH, height: SCREEN_HEIGHT - yPosition - tabHeight - ParentClass.sharedInstance.iPhone_X_Bottom_Padding))
-//        mainView.backgroundColor = .white
-//        self.view.addSubview(mainView)
+        bottmheightAdjust += 40
 
         buttonPlaceOrder = CustomButton(frame: CGRect(x:  SCREEN_WIDTH - 160 , y: SCREEN_HEIGHT  - bottmheightAdjust - tabHeight , width: 150 , height: 40))
         buttonPlaceOrder.setTitle("Submit", for: .normal)
@@ -86,6 +89,9 @@ class UpdatePriceController: ParentClass  ,UITableViewDelegate,UITableViewDataSo
         buttonPlaceOrder.addTarget(self, action: #selector(handelOrderPlace), for: .touchUpInside)
         buttonPlaceOrder.contentHorizontalAlignment = .center
         self.view.addSubview(buttonPlaceOrder)
+
+
+
 
     }
     @objc func onBackPressed(){
@@ -121,7 +127,7 @@ class UpdatePriceController: ParentClass  ,UITableViewDelegate,UITableViewDataSo
 
     func apiCallingFuncation( strDate : String){
 
-        WebServicesManager .productList(ordered_products: 1, search: "", view: self.view, date: strDate, onCompletion: { response in
+        WebServicesManager .productList(ordered_products: 1, search: "", view: self.view, date: strDate, onCompletion: { [self] response in
 
             if response!["success"].intValue == 1 {
                 let res =  response!["products"].arrayValue
@@ -133,11 +139,10 @@ class UpdatePriceController: ParentClass  ,UITableViewDelegate,UITableViewDataSo
                     self.tblList.reloadData()
                 }else{
                     self.initTableview()
-//                    let dateFormatter = DateFormatter()
-//                    dateFormatter.dateFormat = "dd-MM-yyyy"
-//                    self.getOrderApiCallingFuncation(strDate: dateFormatter.string(from: Date()))
                 }
                 self.buttonPlaceOrder.isHidden = false
+                let checked =  response!["checked"].boolValue
+                swtchEnble.isOn = checked
 //                self.mainView.isHidden = false
             } else {
                 if self.tblList != nil{
@@ -145,7 +150,6 @@ class UpdatePriceController: ParentClass  ,UITableViewDelegate,UITableViewDataSo
                 }
                 self.lblSubTitle.isHidden = false
                 self.buttonPlaceOrder.isHidden = true
-//                self.showAlert(message: response!["message"].stringValue, type: AlertType.error, navBar: false)
             }
         },onError:{ error in
             if error != nil {
@@ -167,20 +171,18 @@ class UpdatePriceController: ParentClass  ,UITableViewDelegate,UITableViewDataSo
         })
     }
 
-    func getOrderApiCallingFuncation( strDate : String){
+ @objc  func priceEnableAPICallingFuncation(sender: UISwitch){
 
-        WebServicesManager .orderList(user_id: ConnflixUtilities.shared.UserID!, order_date: strDate, view: self.view, onCompletion: { response in
+    let status : Int!
+    if sender.isOn {
+        status  = 1
+    }else{
+        status = 0
+    }
+    WebServicesManager .priceEnableAPI(status: status, view: self.view, onCompletion: { response in
             if response!["success"].intValue == 1 {
-
-                let orderList  = response!["orders"][0]["items"].arrayValue
-                print(orderList)
-                for dic in orderList{
-                    let value = OrderListItem.init(fromJson: dic)
-                    self.orderedData.append(value)
-                }
-
-                print(self.orderedData.count)
-                self.tblList.reloadData()
+                let msg  = response!["message"].stringValue
+                self.showAlert(message: msg, type: AlertType.success, navBar: false)
             }
         },onError:{ error in
             if error != nil {
@@ -251,16 +253,15 @@ class UpdatePriceController: ParentClass  ,UITableViewDelegate,UITableViewDataSo
 
             let dic = orderDetails[indexPath.row]
             cell.lblFieldName.text = dic.productName
-//            cell.txtquanty.text = dic.salePrice
+
             cell.txtbuyquanty.placeholder = "Purchase Price"
+            cell.txtPurchaseQuanty.placeholder = "Purchase Price"
             cell.txtsellquanty.placeholder = "Selling Price"
 
             cell.txtbuyquanty.text = dic.purchasePrice
             cell.txtsellquanty.text = dic.salePrice
 
-//            cell.lblunitNote.text = dic.unitNote.htmlToString
             cell.imgItem.sd_setImage(with: URL (string: dic.image!), placeholderImage: nil, options: .progressiveLoad)
-
 //            if orderedData.count > 0{
 //                for orderdic in orderedData{
 //                    if orderdic.productId == dic.productId{

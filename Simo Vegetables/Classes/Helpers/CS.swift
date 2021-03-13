@@ -39,6 +39,8 @@ class CS {
         static let key = "key"
         static let admin_id = "admin_id"
         static let date = "date"
+        static let checked = "checked"
+
 
         //SAVE Data KEY
 //        static let userData = "userData"

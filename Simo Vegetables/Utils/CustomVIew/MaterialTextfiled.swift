@@ -36,12 +36,13 @@ extension MDCOutlinedTextField {
         setTextColor(.black, for: .editing)
         setFloatingLabelColor(.black, for: .normal)
         setFloatingLabelColor(.black, for: .editing)
-        
+
         placeholder = pPlaceHolder
         label.text = PInfoText
         
         let imgView = UIImageView (frame: CGRect (x: 5, y: 15 , width: labelHeight, height: labelHeight))
         imgView.image = UIImage (named: pImageName)
+        imgView.setImageColor(color: colorPrimary)
         self.addSubview(imgView)
         }
 

@@ -210,7 +210,8 @@ extension CustomerWiseOrderViewController: LUExpandableTableViewDelegate {
         return nil
     }
 
+
     func expandableTableView(_ expandableTableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 0
+        return 5
     }
 }

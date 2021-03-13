@@ -51,6 +51,13 @@ class PlaceOrderTableViewCell: UITableViewCell ,UITextFieldDelegate{
 
         return txt
     }()
+    var txtPurchaseQuanty :  OrderTextfiled = {
+        let txt = OrderTextfiled()
+        txt.keyboardType = .numberPad
+        txt.textColor = .black
+        return txt
+    }()
+
 
     var txtsellquanty :  OrderTextfiled = {
         let txt = OrderTextfiled()
@@ -100,11 +107,15 @@ class PlaceOrderTableViewCell: UITableViewCell ,UITextFieldDelegate{
         var yPosition = 0
 
         self.lblFieldName.frame = CGRect(x: xPosition, y: yPosition, width: SCREEN_WIDTH - xPosition , height: Order_CELL_LABEL_HEIGHT)
-        yPosition +=  Int(lblFieldName.bounds.height)
 
+        yPosition +=  Int(lblFieldName.bounds.height )
 
-        self.txtbuyquanty.frame = CGRect(x: xPosition, y:yPosition , width:  Int(subView.frame.width)/2 - xPosition , height: Order_CELL_LABEL_HEIGHT)
-        self.txtsellquanty.frame =  CGRect (x:  SCREEN_WIDTH - Int(subView.frame.width)/2 - Y_PADDING , y: yPosition , width:  Int(subView.frame.width)/2 -  xPosition  , height: Order_CELL_LABEL_HEIGHT)
+        let devidedWidth = Int(subView.frame.width) - xPosition - X_PADDING
+
+        self.txtbuyquanty.frame = CGRect(x: xPosition, y:yPosition , width:  devidedWidth/2, height: Order_CELL_LABEL_HEIGHT)
+//        self.txtPurchaseQuanty.frame =  CGRect (x: Int(txtbuyquanty.frame.maxX) + Y_PADDING, y: yPosition , width:  devidedWidth/3 , height: Order_CELL_LABEL_HEIGHT)
+        self.txtsellquanty.frame =  CGRect (x: Int(subView.frame.width) - devidedWidth/2 , y: yPosition , width:  devidedWidth/2  , height: Order_CELL_LABEL_HEIGHT)
+
 
         self.lblSubFieldName.isHidden = true
 
@@ -116,6 +127,7 @@ class PlaceOrderTableViewCell: UITableViewCell ,UITextFieldDelegate{
         subView.addSubview(lblFieldName)
         subView.addSubview(txtsellquanty)
         subView.addSubview(txtbuyquanty)
+//        subView.addSubview(txtPurchaseQuanty)
         subView.addSubview(lblunitNote)
 
     }

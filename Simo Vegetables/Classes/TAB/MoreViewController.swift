@@ -44,7 +44,7 @@ class MoreViewController: ParentClass,UITextFieldDelegate {
     }
 
     func reloadProfileData() {
-        print(ConnflixUtilities.shared.firstname)
+        print(ConnflixUtilities.shared.firstname as Any)
         imgProfile.sd_setImage(with:URL (string:ConnflixUtilities.shared.profilePic!) , placeholderImage: UIImage(named: "gallery"), options: .progressiveLoad, completed: nil)
         name.text = "\(ConnflixUtilities.shared.firstname!) \(ConnflixUtilities.shared.lastname!)"
         phn.text = "\(ConnflixUtilities.shared.mobile!)"
