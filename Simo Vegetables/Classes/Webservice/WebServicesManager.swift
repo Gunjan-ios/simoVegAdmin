@@ -11,9 +11,9 @@ import Alamofire
 import SwiftyJSON
 
 let apiId = "YzMxYjMyMzY0Y2UxOWNhOGZjZDE1MGE0MTdlY2NlNTg="
-//let FINAL_URL = "https://digitalfriend.co.in/simo_vegetables/api/"
+let FINAL_URL = "https://digitalfriend.co.in/simo_vegetables/api/"
 
-let FINAL_URL = "https://simovegetable.com/api/"
+//let FINAL_URL = "https://simovegetable.com/api/"
 
 let BASE_Admin_URL = "\(FINAL_URL)"
 let BASE_URL = "\(FINAL_URL)services/"

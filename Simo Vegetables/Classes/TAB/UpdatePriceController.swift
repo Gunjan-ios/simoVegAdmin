@@ -72,7 +72,7 @@ class UpdatePriceController: ParentClass  ,UITableViewDelegate,UITableViewDataSo
             bottmheightAdjust = 50
         }
         let lbl = CustomLabel (frame: CGRect (x: 70, y: SCREEN_HEIGHT  - bottmheightAdjust - tabHeight - 4, width: SCREEN_WIDTH - X_PADDING*2 - 70 , height: 40))
-        lbl.text = "Price enble ?"
+        lbl.text = "Price Enble?"
         lbl.font = UIFont (name: APP_FONT_NAME_BOLD, size: NAV_HEADER_FONT_SIZE)
         lbl.textColor = .black
         self.view.addSubview(lbl)
@@ -99,14 +99,16 @@ class UpdatePriceController: ParentClass  ,UITableViewDelegate,UITableViewDataSo
 //        mainView.isHidden = false
     }
     func getTableData(){
-        for i in 0..<tblList.numberOfRows(inSection: 0) { //tbl--> your table name
+        for i in 0..<tblList.numberOfRows(inSection: 0) {
             let dic = orderDetails[i]
             let cell = tblList.cellForRow(at: IndexPath(row: i, section: 0)) as? PlaceOrderTableViewCell
             if cell == nil{
-                return;
+                continue;
             }
             let set = "\(cell!.txtbuyquanty.text ?? "")|\(cell!.txtsellquanty.text ?? "")"
-            paramQuntity.setValue(set, forKey: dic.productId)
+            if cell?.txtbuyquanty.text != ""  || cell?.txtsellquanty.text != ""{
+                paramQuntity.setValue(set, forKey: dic.productId)
+            }
         }
         strOrder = Utils.stringFromJson(obj: paramQuntity as! [String : Any])
          print(strOrder as String)
@@ -143,7 +145,6 @@ class UpdatePriceController: ParentClass  ,UITableViewDelegate,UITableViewDataSo
                 self.buttonPlaceOrder.isHidden = false
                 let checked =  response!["checked"].boolValue
                 swtchEnble.isOn = checked
-//                self.mainView.isHidden = false
             } else {
                 if self.tblList != nil{
                     self.tblList.isHidden = true
@@ -241,6 +242,7 @@ class UpdatePriceController: ParentClass  ,UITableViewDelegate,UITableViewDataSo
             cell.layoutMargins = UIEdgeInsets.zero
             cell.selectionStyle = .none
             cell.backgroundColor = UIColor.clear
+            cell.contentView.isUserInteractionEnabled = false
 //            cell.delegate = self
 
             cell.txtbuyquanty.delegate = self
