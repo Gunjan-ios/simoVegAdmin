@@ -148,11 +148,11 @@ extension CustomerWiseOrderViewController: LUExpandableTableViewDataSource {
 
         let dic = orderDetails[indexPath.section].items[indexPath.row]
 //        cell.btnqunty.setTitle("Qty : \(dic.quantity ?? "0")", for: .normal)
-        cell.btnqunty.setTitle("Qty : \(dic.quantity ?? "0") \(dic.unit ?? "")", for: .normal)
+        cell.btnqunty.setTitle("Qty : \(dic.quantity ?? "0") \(dic.unit ?? "-")", for: .normal)
 
         cell.lblFieldName.text = dic.productName
-        cell.lblSubFieldName.text = "\(dic.salePrice ?? "") RS / 1 \(dic.unit ?? "")"
-        cell.lblSubFieldTotal.text = "Subtotal : \(dic.totalSalePrice ?? "")"
+        cell.lblSubFieldName.text = "\(dic.salePrice ?? "-") RS / 1 \(dic.unit ?? "-")"
+        cell.lblSubFieldTotal.text = "Subtotal : \(dic.totalSalePrice ?? "-") RS"
         cell.imgItem.sd_setImage(with: URL (string: dic.image!), placeholderImage: nil, options: .progressiveLoad)
 
         return cell
@@ -162,13 +162,13 @@ extension CustomerWiseOrderViewController: LUExpandableTableViewDataSource {
         guard let sectionHeader = expandableTableView.dequeueReusableHeaderFooterView(withIdentifier: "MySectionHeader") as? MyExpandableTableViewSectionHeader else {
             assertionFailure("Section header shouldn't be nil")
             return LUExpandableTableViewSectionHeader()
-        }
+        } 
 
         sectionHeader.name.text = "\(orderDetails[section].firstName ?? "")" + "\(orderDetails[section].lastName ?? "")"
         sectionHeader.address.text = orderDetails[section].address
         sectionHeader.orderName.text = orderDetails[section].orderNumber
         sectionHeader.orderDate.text = "\(orderDetails[section].orderPlacedOn ?? "")"
-        sectionHeader.ordertotal.text = "Total Amount : \(orderDetails[section].orderAmount ?? "")"
+        sectionHeader.ordertotal.text = "Total Amount : \(orderDetails[section].orderAmount ?? "-") RS"
         sectionHeader.expandCollapseButton.setTitle("Total Item : \(orderDetails[section].totalItems ?? 0)", for: .normal)
 
         return sectionHeader

@@ -62,8 +62,8 @@ class LoginVC: ParentClass ,UITextFieldDelegate,CountryPickerViewDelegate, Count
         self.btn_Login.layer.cornerRadius = self.btn_Login.frame.size.height/2
         txt_User.delegate = self
         txt_Password.delegate = self
-        txt_User.text = "9016493160"
-        txt_Password.text = "admin@123"
+        txt_User.text = "9316246947"
+        txt_Password.text = "simovegetable2021"
 //        setupCountryPicker()
         UDID =  KeychainManager() .getDeviceIdentifierFromKeychain()
         print(UDID as Any)

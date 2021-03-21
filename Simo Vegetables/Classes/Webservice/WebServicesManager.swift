@@ -11,9 +11,9 @@ import Alamofire
 import SwiftyJSON
 
 let apiId = "YzMxYjMyMzY0Y2UxOWNhOGZjZDE1MGE0MTdlY2NlNTg="
-let FINAL_URL = "https://digitalfriend.co.in/simo_vegetables/api/"
+//let FINAL_URL = "https://digitalfriend.co.in/simo_vegetables/api/"
 
-//let FINAL_URL = "https://simovegetable.com/api/"
+let FINAL_URL = "https://simovegetable.com/api/"
 
 let BASE_Admin_URL = "\(FINAL_URL)"
 let BASE_URL = "\(FINAL_URL)services/"
@@ -424,6 +424,7 @@ class WebServicesManager {
         print("Request :- \(strUrl)")
         Alamofire.request(strUrl, method: .post, parameters:parameters,encoding: JSONEncoding.default).responseJSON { (response) in
             Hud.hideLoading(view: view)
+            print(response)
             guard let value = response.result.value
                 else {
                     if let err = response.error{
@@ -448,6 +449,7 @@ class WebServicesManager {
 
         Alamofire.request(strUrl, method: .post, parameters:parameters,encoding: JSONEncoding.default).responseJSON { (response) in
             Hud.hideLoading(view: view)
+            print(response)
             guard let value = response.result.value
                 else {
                     if let err = response.error{
