@@ -8,7 +8,7 @@
 
 import UIKit
 
-class UpdatePriceController: ParentClass  ,UITableViewDelegate,UITableViewDataSource{
+class UpdatePriceController: ParentClass  ,UITableViewDelegate,UITableViewDataSource,UITableViewDataSourcePrefetching{
     
     fileprivate var headerview:UIView!
     fileprivate var yPosition: Int!
@@ -27,6 +27,7 @@ class UpdatePriceController: ParentClass  ,UITableViewDelegate,UITableViewDataSo
     var placeorderDetails : [OrderPlaceProduct]! = [OrderPlaceProduct]()
 
     var orderedData : [OrderListItem]! = [OrderListItem]()
+    var orderArray = [[String:Any]]()
 
     var tabHeight : Int = 0
     var bottmheightAdjust : Int = 0
@@ -98,21 +99,19 @@ class UpdatePriceController: ParentClass  ,UITableViewDelegate,UITableViewDataSo
 //        mainConfimVIew.isHidden = true
 //        mainView.isHidden = false
     }
+
     func getTableData(){
-        for i in 0..<tblList.numberOfRows(inSection: 0) {
-            let dic = orderDetails[i]
-            let cell = tblList.cellForRow(at: IndexPath(row: i, section: 0)) as? PlaceOrderTableViewCell
-            if cell == nil{
-                continue;
-            }
-            let set = "\(cell!.txtbuyquanty.text ?? "")|\(cell!.txtsellquanty.text ?? "")"
-            if cell?.txtbuyquanty.text != ""  || cell?.txtsellquanty.text != ""{
-                paramQuntity.setValue(set, forKey: dic.productId)
+        for  item in orderArray {
+            let set = "\(item["Value1"] ?? "")|\(item["Value2"] ?? "")"
+            if item["Value1"] as? String != "" || item ["Value2"] as? String != ""{
+                paramQuntity.setValue(set, forKey: item["id"] as! String)
             }
         }
         strOrder = Utils.stringFromJson(obj: paramQuntity as! [String : Any])
-         print(strOrder as String)
+        print(strOrder as Any)
     }
+
+
     @objc func handelOrderPlace(){
         getTableData()
         if paramQuntity.count > 0{
@@ -205,6 +204,7 @@ class UpdatePriceController: ParentClass  ,UITableViewDelegate,UITableViewDataSo
         self.tblList.backgroundColor = .white
         self.tblList.estimatedRowHeight = UITableView.automaticDimension
         self.tblList.rowHeight = TABLEVIEW_CELL_HEIGHT
+        self.tblList.prefetchDataSource = self
         self.view.addSubview(self.tblList)
         self.tblList.tableFooterView = UIView()
         self.tblList.endEditing(true)
@@ -227,6 +227,15 @@ class UpdatePriceController: ParentClass  ,UITableViewDelegate,UITableViewDataSo
 //        self.tblconfirmOrderList.tableFooterView = UIView()
 //
 //    }
+    func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
+
+//        print("prefetching row of \(indexPaths)")
+    }
+
+    func tableView(_ tableView: UITableView, cancelPrefetchingForRowsAt indexPaths: [IndexPath]) {
+
+//        print("cancel prefetch row of \(indexPaths)")
+    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if tableView == tblList{
             return orderDetails.count
@@ -263,15 +272,9 @@ class UpdatePriceController: ParentClass  ,UITableViewDelegate,UITableViewDataSo
             cell.txtbuyquanty.text = dic.purchasePrice
             cell.txtsellquanty.text = dic.salePrice
 
+            orderArray.append(["Value1" : "","Value2" : "", "id":dic.productId!])
+
             cell.imgItem.sd_setImage(with: URL (string: dic.image!), placeholderImage: nil, options: .progressiveLoad)
-//            if orderedData.count > 0{
-//                for orderdic in orderedData{
-//                    if orderdic.productId == dic.productId{
-//                        cell.txtquanty.text = orderdic.quantity
-//                        textFieldDidEndEditing(cell.txtquanty)
-//                    }
-//                }
-//            }
             return cell
         }else{
             let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: ConfirmOrderTableViewCell.self)) as! ConfirmOrderTableViewCell
@@ -302,16 +305,33 @@ extension UpdatePriceController : UITextFieldDelegate{
 //
 //        if !textField.text!.isEmpty{
 //            if keyExiest{
-//                paramQuntity[textField.tag] = textField.text
+//                if textField.placeholder == "Purchase Price"{
+//                    paramQuntity[textField.tag] = "\(textField.text ?? "")|"
+//                }
+//                if textField.placeholder == "Selling Price"{
+//                    paramQuntity[textField.tag] = "|\(textField.text ?? "")"
+//                }
 //            }else{
 //                dic.myOrder = textField.text
 //                placeorderDetails.append(dic)
-//                paramQuntity.setValue(textField.text!, forKey: dic.productId)
+//                let strData = textField.placeholder == "Purchase Price" ? "\(textField.text ?? "")" : "|\(textField.text ?? "")"
+//                paramQuntity.setValue(strData, forKey: dic.productId)
 //            }
 //            strOrder = Utils.stringFromJson(obj: paramQuntity as! [String : Any])
 //            print(strOrder as Any)
-//        }
-    }
+
+            let center: CGPoint = textField.center
+            let rootViewPoint: CGPoint = textField.superview!.convert(center, to: tblList)
+            let indexPath: IndexPath = tblList.indexPathForRow(at: rootViewPoint)! as IndexPath
+
+            if textField.placeholder == "Purchase Price" && textField.text != ""{
+                orderArray[indexPath.row ]["Value1"] = textField.text
+            }
+
+            if textField.placeholder == "Selling Price" && textField.text != ""{
+                orderArray[indexPath.row ]["Value2"] = textField.text
+            }
+        }
 
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         return true
