@@ -34,6 +34,7 @@ class UpdatePriceController: ParentClass  ,UITableViewDelegate,UITableViewDataSo
 
     var strOrder : String!
     var paramQuntity = NSMutableDictionary()
+    var strQuntity =  [String :Any]()
 
 //    var mainConfimVIew : UIView!
     fileprivate var buttonsubmitOrder: CustomButton!
@@ -90,11 +91,8 @@ class UpdatePriceController: ParentClass  ,UITableViewDelegate,UITableViewDataSo
         buttonPlaceOrder.addTarget(self, action: #selector(handelOrderPlace), for: .touchUpInside)
         buttonPlaceOrder.contentHorizontalAlignment = .center
         self.view.addSubview(buttonPlaceOrder)
-
-
-
-
     }
+
     @objc func onBackPressed(){
 //        mainConfimVIew.isHidden = true
 //        mainView.isHidden = false
@@ -108,6 +106,8 @@ class UpdatePriceController: ParentClass  ,UITableViewDelegate,UITableViewDataSo
             }
         }
         strOrder = Utils.stringFromJson(obj: paramQuntity as! [String : Any])
+        paramQuntity = Utils.jsonObjectDic(jsonString: strOrder)
+        print(paramQuntity)
         print(strOrder as Any)
     }
 
@@ -162,7 +162,7 @@ class UpdatePriceController: ParentClass  ,UITableViewDelegate,UITableViewDataSo
 
         WebServicesManager .updatePrice(ordered_products: strOrder, view: self.view, onCompletion: { response in
             if response!["success"].intValue == 1 {
-                self.showAlert(message: response!["message"].stringValue, type: AlertType.error, navBar: false)
+                self.showAlert(message: response!["message"].stringValue, type: AlertType.success, navBar: false)
             }
         },onError:{ error in
             if error != nil {
@@ -272,7 +272,9 @@ class UpdatePriceController: ParentClass  ,UITableViewDelegate,UITableViewDataSo
             cell.txtbuyquanty.text = dic.purchasePrice
             cell.txtsellquanty.text = dic.salePrice
 
-            orderArray.append(["Value1" : "","Value2" : "", "id":dic.productId!])
+            if dic.purchasePrice != "" || dic.salePrice != ""{
+                orderArray.append(["Value1" : dic.purchasePrice != "" ? dic.purchasePrice! : "" ,"Value2" : dic.salePrice != "" ? dic.salePrice! : "", "id":dic.productId!])
+            }
 
             cell.imgItem.sd_setImage(with: URL (string: dic.image!), placeholderImage: nil, options: .progressiveLoad)
             return cell

@@ -424,7 +424,6 @@ class WebServicesManager {
         print("Request :- \(strUrl)")
         Alamofire.request(strUrl, method: .post, parameters:parameters,encoding: JSONEncoding.default).responseJSON { (response) in
             Hud.hideLoading(view: view)
-            print(response)
             guard let value = response.result.value
                 else {
                     if let err = response.error{

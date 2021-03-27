@@ -98,7 +98,6 @@ class CustomerWiseOrderViewController: ParentClass {
                     self.tblList.isHidden = true
                 }
                 self.lblSubTitle.isHidden = false
-
                 self.showAlert(message: response!["message"].stringValue, type: AlertType.error, navBar: false)
             }
         },onError:{ error in
@@ -164,7 +163,7 @@ extension CustomerWiseOrderViewController: LUExpandableTableViewDataSource {
             return LUExpandableTableViewSectionHeader()
         } 
 
-        sectionHeader.name.text = "\(orderDetails[section].firstName ?? "")" + "\(orderDetails[section].lastName ?? "")"
+        sectionHeader.name.text = "\(orderDetails[section].firstName ?? "")"  + " " + "(\(orderDetails[section].lastName ?? ""))"
         sectionHeader.address.text = orderDetails[section].address
         sectionHeader.orderName.text = orderDetails[section].orderNumber
         sectionHeader.orderDate.text = "\(orderDetails[section].orderPlacedOn ?? "")"

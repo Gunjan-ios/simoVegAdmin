@@ -143,28 +143,28 @@ class Utils: NSObject {
             return "application/octet-stream"
         }
     }
-//    static func stringFromJson(object: [[String : Any]]) -> String{
-//        let newjson = JSON(object)
-//        let sjod = newjson.rawString()
-//        return sjod!
-////        let jsonData = try? JSONSerialization.data(withJSONObject: object, options: [])
-////        let jsonString = String(data: jsonData!, encoding: .utf8)
-////        return jsonString!
-//    }
-//    static func jsonObject(jsonString : String) -> [[String : Any]] {
-//        let jsonData = jsonString.data(using: .utf8)
-//        let dictionary = try? JSONSerialization.jsonObject(with: jsonData!, options:  [])
-//        return dictionary as! [[String : Any]]
-//    }
-    
-    static func stringFromJson(object: [JSON]) -> String{
+    static func stringFromJson(object: [[String : Any]]) -> String{
         let newjson = JSON(object)
         let sjod = newjson.rawString()
         return sjod!
-        //        let jsonData = try? JSONSerialization.data(withJSONObject: object, options: [])
-        //        let jsonString = String(data: jsonData!, encoding: .utf8)
-        //        return jsonString!
+//        let jsonData = try? JSONSerialization.data(withJSONObject: object, options: [])
+//        let jsonString = String(data: jsonData!, encoding: .utf8)
+//        return jsonString!
     }
+    static func jsonObjectDic(jsonString : String) -> NSMutableDictionary{
+        let jsonData = jsonString.data(using: .utf8)
+        let dictionary = try? JSONSerialization.jsonObject(with: jsonData!, options: .mutableContainers )
+        return dictionary as! NSMutableDictionary
+    }
+    
+//    static func stringFromJson(object: String) -> [String : Any]{
+//        let newjson = JSON(object)
+//        let sjod = newjson.rawString()
+//        return sjod!
+//        //        let jsonData = try? JSONSerialization.data(withJSONObject: object, options: [])
+//        //        let jsonString = String(data: jsonData!, encoding: .utf8)
+//        //        return jsonString!
+//    }
     static func stringFromJson(obj: [String : Any]) -> String{
         let jsonData = try? JSONSerialization.data(withJSONObject: obj, options: [])
         let jsonString = String(data: jsonData!, encoding: .utf8)

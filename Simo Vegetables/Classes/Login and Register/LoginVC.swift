@@ -55,15 +55,15 @@ class LoginVC: ParentClass ,UITextFieldDelegate,CountryPickerViewDelegate, Count
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        txt_User.InitDesign(pImageName: "message", PInfoText: "Mobile", pPlaceHolder: "Mobile Number")
-        txt_Password.InitDesign(pImageName: "lock", PInfoText: "Password", pPlaceHolder: "Password")
+        txt_User.InitDesign(pImageName: "message", PInfoText: "", pPlaceHolder: "Mobile Number")
+        txt_Password.InitDesign(pImageName: "lock", PInfoText: "", pPlaceHolder: "Password")
         self.navigationController?.navigationBar.barTintColor = THEME_COLOR
 
         self.btn_Login.layer.cornerRadius = self.btn_Login.frame.size.height/2
         txt_User.delegate = self
         txt_Password.delegate = self
-        txt_User.text = "9316246947"
-        txt_Password.text = "simovegetable2021"
+//        txt_User.text = "9316246947"
+//        txt_Password.text = "simovegetable2021"
 //        setupCountryPicker()
         UDID =  KeychainManager() .getDeviceIdentifierFromKeychain()
         print(UDID as Any)

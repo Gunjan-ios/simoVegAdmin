@@ -38,26 +38,31 @@ extension MDCOutlinedTextField {
         setFloatingLabelColor(.black, for: .editing)
 
         placeholder = pPlaceHolder
-        label.text = PInfoText
-        
-        let imgView = UIImageView (frame: CGRect (x: 5, y: 15 , width: labelHeight, height: labelHeight))
+        label.text = placeholder
+        if PInfoText != "" {
+            text = PInfoText
+            placeholder = ""
+        }
+
+        let imgView = UIImageView (frame: CGRect (x: 0, y: 10 , width: labelHeight, height: labelHeight))
         imgView.image = UIImage (named: pImageName)
         imgView.setImageColor(color: colorPrimary)
-        self.addSubview(imgView)
+        self.leftView = imgView
+        self.leftViewMode = .always
+
         }
 
     //  Padding x
     override public func textRect(forBounds bounds: CGRect) -> CGRect {
-        // let newCGRect = bounds.inset(by: UIEdgeInsets(top: 0, left: padding, bottom: 0, right: padding))
-        return bounds.inset(by: UIEdgeInsets(top: 0, left: 40, bottom: 0, right: 0))
+        return bounds.inset(by: UIEdgeInsets(top: 0, left: 45, bottom: 0, right: 0))
     }
     
     override public func placeholderRect(forBounds bounds: CGRect) -> CGRect {
-        return bounds.inset(by: UIEdgeInsets(top: 0, left: 40, bottom: 0, right: 0))
+        return bounds.inset(by: UIEdgeInsets(top: 0, left: 45, bottom: 0, right: 0))
     }
     
     override public func editingRect(forBounds bounds: CGRect) -> CGRect {
-        return bounds.inset(by: UIEdgeInsets(top: 0, left: 40, bottom: 0, right: 0))
+        return bounds.inset(by: UIEdgeInsets(top: 0, left: 45, bottom: 0, right: 0))
     }
     }
 //}
