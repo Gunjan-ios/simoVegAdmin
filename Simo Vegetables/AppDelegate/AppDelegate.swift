@@ -19,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         IQKeyboardManager.shared.enable = true
         IQKeyboardManager.shared.enableAutoToolbar = true
+        IQKeyboardManager .shared.toolbarPreviousNextAllowedClasses = [UIScrollView.self]
 
         self.window = UIWindow(frame: UIScreen.main.bounds)
         if #available(iOS 13.0, *) {

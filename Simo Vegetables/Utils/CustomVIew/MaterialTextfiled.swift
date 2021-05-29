@@ -44,7 +44,7 @@ extension MDCOutlinedTextField {
             placeholder = ""
         }
 
-        let imgView = UIImageView (frame: CGRect (x: 0, y: 10 , width: labelHeight, height: labelHeight))
+        let imgView = UIImageView (frame: CGRect (x: 0, y: 0 , width: labelHeight, height: labelHeight))
         imgView.image = UIImage (named: pImageName)
         imgView.setImageColor(color: colorPrimary)
         self.leftView = imgView

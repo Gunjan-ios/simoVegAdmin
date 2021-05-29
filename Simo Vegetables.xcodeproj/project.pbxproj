@@ -1002,6 +1002,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 57YS5G3458;
 				INFOPLIST_FILE = "Simo Vegetables/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1009,7 +1010,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Simo-Vegetables.admin";
 				PRODUCT_NAME = "Simo Veg Admin";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -1018,17 +1019,20 @@
 			baseConfigurationReference = 0EED80C11E74D981A57FBB41 /* Pods-Simo Vegetables.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 57YS5G3458;
 				INFOPLIST_FILE = "Simo Vegetables/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Simo-Vegetables.admin";
 				PRODUCT_NAME = "Simo Veg Admin";
+				PROVISIONING_PROFILE_SPECIFIER = SimoVegetablesAdmin;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

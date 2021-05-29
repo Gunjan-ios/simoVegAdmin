@@ -66,7 +66,9 @@ class CustomComboBoxView: UIView, UIPickerViewDelegate, UIPickerViewDataSource, 
         // for date picker
         self.datePickerView = UIDatePicker()
         self.datePickerView!.datePickerMode = UIDatePicker.Mode.date
-        self.datePickerView!.preferredDatePickerStyle  = .wheels
+        if #available(iOS 13.4, *) {
+            self.datePickerView?.preferredDatePickerStyle = .wheels
+        }
         self.datePickerView!.maximumDate = Date()
         self.datePickerView!.addTarget(self, action: #selector(datePickerForDateValueChanged(sender:)), for: .valueChanged)
         self.txtField.inputView = self.datePickerView

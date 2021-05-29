@@ -47,7 +47,9 @@ class LoginVC: ParentClass ,UITextFieldDelegate,CountryPickerViewDelegate, Count
     
     weak public var dataSource: CountryPickerViewDataSource?
     weak public var delegate: CountryPickerViewDelegate?
-    
+
+    var isShowPassword = false
+    var showHidePasswordButton:UIButton!
     
     // ----------------------------------------------------------
     //MARK:- Viewload
@@ -55,13 +57,24 @@ class LoginVC: ParentClass ,UITextFieldDelegate,CountryPickerViewDelegate, Count
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        txt_User.InitDesign(pImageName: "message", PInfoText: "", pPlaceHolder: "Mobile Number")
+        txt_User.InitDesign(pImageName: "phone", PInfoText: "", pPlaceHolder: "Mobile Number")
         txt_Password.InitDesign(pImageName: "lock", PInfoText: "", pPlaceHolder: "Password")
         self.navigationController?.navigationBar.barTintColor = THEME_COLOR
 
         self.btn_Login.layer.cornerRadius = self.btn_Login.frame.size.height/2
         txt_User.delegate = self
         txt_Password.delegate = self
+
+        //password hide & show
+        showHidePasswordButton = UIButton(frame: CGRect(x:0, y: 0, width: 40, height: 40))
+        showHidePasswordButton.backgroundColor = UIColor.clear
+        showHidePasswordButton.contentHorizontalAlignment = .center
+        showHidePasswordButton.setImage(UIImage(named: "hidePasswordIcon"), for: .normal)
+        showHidePasswordButton.setImage(UIImage(named: "showPasswordIcon"), for: .selected)
+        showHidePasswordButton.tag = 1
+        showHidePasswordButton.addTarget(self, action: #selector(showHidePassword(sender:)), for: .touchUpInside)
+        txt_Password.rightView = showHidePasswordButton
+        txt_Password.rightViewMode = .always
 //        txt_User.text = "9316246947"
 //        txt_Password.text = "simovegetable2021"
 //        setupCountryPicker()
@@ -69,6 +82,23 @@ class LoginVC: ParentClass ,UITextFieldDelegate,CountryPickerViewDelegate, Count
         print(UDID as Any)
         self.view.backgroundColor = .white
         // Do any additional setup after loading the view.
+    }
+    // password showhide action
+    @objc func showHidePassword(sender:UIButton) {
+
+        if (self.isShowPassword == true) {
+            if sender.tag == 1 {
+                txt_Password.isSecureTextEntry = true
+                sender.isSelected = false
+            }
+            self.isShowPassword = false
+        } else {
+            if sender.tag == 1 {
+                txt_Password.isSecureTextEntry = false
+                sender.isSelected = true
+            }
+            self.isShowPassword = true
+        }
     }
 
     //––––––––––––––––––––––––––––––––––––––––
